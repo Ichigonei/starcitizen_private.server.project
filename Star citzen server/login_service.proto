@@ -1,0 +1,694 @@
+syntax = "proto3";
+
+package sc.external.services.login.v1;
+option go_package = "starcitizen/proto/login";
+
+// ------------------- LOGIN SERVICE -------------------
+// Updated to match the real Star Citizen client protocol
+// Handles authentication and session management only
+service LoginService {
+  rpc InitiateLogin(InitiateLoginRequest) returns (InitiateLoginResponse);
+  rpc CancelLogin(CancelLoginRequest) returns (CancelLoginResponse);
+  rpc RefreshAuth(RefreshAuthRequest) returns (RefreshAuthResponse);
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+  rpc VerifyDevice(VerifyDeviceRequest) returns (VerifyDeviceResponse);
+  rpc Complete2FA(Complete2FARequest) returns (Complete2FAResponse);
+  rpc UpdateFromStarNetwork(UpdateFromStarNetworkRequest) returns (UpdateFromStarNetworkResponse);
+  rpc SetLobbyReady(SetLobbyReadyRequest) returns (SetLobbyReadyResponse);
+  rpc MonitorConnection(MonitorConnectionRequest) returns (MonitorConnectionResponse);
+  rpc ReportError(ReportErrorRequest) returns (ReportErrorResponse);
+  rpc ProcessEntitlements(ProcessEntitlementsRequest) returns (ProcessEntitlementsResponse);
+  rpc ReconcileAccount(ReconcileAccountRequest) returns (ReconcileAccountResponse);
+  rpc UpdateCharacterStatus(UpdateCharacterStatusRequest) returns (UpdateCharacterStatusResponse);
+  rpc SendCustomData(SendCustomDataRequest) returns (SendCustomDataResponse);  // MITM custom data injection
+  
+  // CRITICAL: LoginNotificationStream for completing login flow after RSI access token
+  rpc LoginNotificationStream(LoginNotificationStreamRequest) returns (stream LoginNotification);
+  rpc CharacterStatus(CharacterStatusRequest) returns (CharacterStatusResponse);
+}
+
+// Updated to match what the client actually sends (based on intercepted traffic)
+message InitiateLoginRequest {
+  string session_id = 1;        // UUID session identifier from client
+  bytes client_data = 2;        // Binary client data/timestamp
+  string jwt_token = 3;         // JWT token for authentication (optional)
+  string device_info = 4;       // Device information (optional)
+  VersionIdentifier version = 5; // Game version information (optional)
+  //LoginRequestStatus status = 6; // Request status tracking (optional)
+  
+  // Authentication credentials
+  oneof auth_method {
+    UsernamePassword credentials = 7;    // Username/password auth
+    string oauth_token = 8;              // OAuth token
+    string steam_ticket = 9;             // Steam authentication ticket
+    string epic_token = 10;              // Epic Games Store token
+  }
+  
+  string client_fingerprint = 11;       // Client hardware fingerprint
+  string ip_address = 12;               // Client IP address
+  repeated string trusted_devices = 13; // List of trusted device IDs
+  
+  // Additional fields based on log analysis
+  string game_version_identifier = 14;  // Game version identifier (e.g., "01a12935-abc669c4")
+  ConnectionState connection_state = 15; // Current connection state
+  AccountState account_state = 16;      // Current account state
+  bool transport_security = 17;         // Transport security enabled (0/1)
+  string grpc_endpoint = 18;            // gRPC endpoint being used
+  
+  // Development/Debug options for MITM and testing
+  DevLoginDialogMode show_dev_login_dialog = 19; // Show development login dialog mode
+  bool enable_debug_mode = 20;          // Enable debug mode for additional logging and features
+  repeated string debug_flags = 21;     // Debug flags for specific features
+  string custom_payload = 22;           // Custom payload data for development/testing
+}
+
+message InitiateLoginResponse {
+  string session_id = 1;        // Echo back session ID
+  bool success = 2;             // Login success status
+  string error_message = 3;     // Error message if login failed
+  string auth_token = 4;        // Authentication token if successful
+  int64 expires_at = 5;         // Token expiration timestamp
+  int32 result_code = 6;        // CRITICAL: Result code for Star Citizen (0=success, 1=error)
+  string nickname = 7;          // User's nickname/display name
+  string displayname = 8;       // User's display name
+  string tracking_metrics_id = 9; // Tracking/metrics identifier
+  CacheData cache_data = 10;    // Character and game cache data
+  string jwt = 11;              // JWT token for authenticated sessions
+  
+  // MULTI-PHASE LOGIN SUPPORT (from decompiled code analysis)
+  string account_id = 12;       // Account ID (accountId field expected by client)
+  int32 login_request_state = 13; // LOGIN_REQUEST_STATE (1=ONGOING, 2=ERROR, 3=COMPLETE)
+  int32 login_request_phase = 14; // LOGIN_REQUEST_PHASE (1=QUEUE, 2=AUTH, 3=CHARS, 4=ENTITLE, 5=DONE)
+  string login_request_id = 15; // Login request identifier for tracking
+  int32 badge_mask = 16;        // Badge mask (from decompiled code)
+  
+  // Enhanced authentication response
+  AuthenticationResult auth_result = 17;   // Detailed auth result
+  string refresh_token = 18;               // Token for refreshing auth
+  repeated string permissions = 19;        // User permissions/scopes
+  UserProfile user_profile = 20;           // Basic user information
+  SecurityChallenge challenge = 21;        // Additional security challenge (if needed)
+  bool requires_2fa = 22;                  // Whether 2FA is required
+  string device_verification_token = 23;   // Token for device verification
+  
+  // System and connection state information
+  ConnectionState connection_state = 24;   // Current connection state
+  AccountState account_state = 25;         // Current account state
+  SystemState system_state = 26;           // Current system state
+  repeated StreamInfo available_streams = 27; // Available streams for the session
+  bool channel_reused = 28;                // Whether gRPC channel was reused
+  
+  // Development/Debug response data for MITM and testing
+  string custom_response_data = 29;        // Custom response data for development/testing
+  repeated string debug_commands = 30;     // Debug commands to execute on client
+  string console_commands = 31;            // Console commands to inject into client
+  bool force_dev_mode = 32;                // Force client into development mode
+  DevLoginDialogConfig dev_login_config = 33; // Development login dialog configuration
+}
+
+message CancelLoginRequest {
+  string session_id = 1;        // Session ID to cancel
+}
+
+message CancelLoginResponse {
+  bool success = 1;             // Cancellation success status
+  string message = 2;           // Status message
+}
+
+message VersionIdentifier {
+  string major = 1;             // Major version
+  string minor = 2;             // Minor version
+  string patch = 3;             // Patch version
+  string build = 4;             // Build number
+}
+
+enum LoginRequestStatus {
+  LOGIN_STATUS_UNKNOWN = 0;
+  LOGIN_STATUS_INITIATED = 1;
+  LOGIN_STATUS_PROCESSING = 2;
+  LOGIN_STATUS_COMPLETED = 3;
+  LOGIN_STATUS_FAILED = 4;
+  LOGIN_STATUS_CANCELLED = 5;
+}
+
+// Authentication-related messages
+message UsernamePassword {
+  string username = 1;           // User's username or email
+  string password = 2;           // User's password (should be hashed)
+  bool remember_me = 3;          // Whether to remember the login
+}
+
+message AuthenticationResult {
+  AuthStatus status = 1;         // Authentication status
+  string error_code = 2;         // Error code if failed
+  string error_description = 3;  // Human-readable error description
+  int32 attempts_remaining = 4;  // Login attempts remaining before lockout
+  int64 lockout_expires_at = 5;  // When account lockout expires
+}
+
+message UserProfile {
+  string user_id = 1;            // Unique user identifier
+  string username = 2;           // Display username
+  string email = 3;              // User email (may be masked)
+  string avatar_url = 4;         // Profile picture URL
+  repeated string roles = 5;     // User roles/groups
+  int64 account_created_at = 6;  // Account creation timestamp
+  bool email_verified = 7;       // Whether email is verified
+}
+
+message SecurityChallenge {
+  ChallengeType type = 1;        // Type of security challenge
+  string challenge_data = 2;     // Challenge-specific data
+  int64 expires_at = 3;          // Challenge expiration time
+  string hint = 4;               // Optional hint for user
+}
+
+// Cache data structure for Star Citizen client
+message CacheData {
+  CharacterCacheData character = 1;  // Primary character data
+  repeated CharacterCacheData characters = 2; // All character data
+  GameCacheData game_data = 3;       // Game-specific cache data
+  StarNetworkData star_network = 4;  // Star Network configuration
+  GameConfigData game_config = 5;    // Game configuration data
+  UniverseData universe = 6;         // Universe configuration data
+  PermissionsData permissions = 7;   // User permissions data
+  string account_id = 8;             // Account identifier
+  string citizen_id = 9;             // Citizen identifier
+  string email = 10;                 // User email address
+}
+
+message CharacterCacheData {
+  string geid = 1;               // Global Entity ID
+  string name = 2;               // Character name
+  string handle = 3;             // Character handle/callsign
+  string organization = 4;       // Organization name
+  string location = 5;           // Current location
+  int64 credits = 6;             // Character credits/UEC
+  int32 level = 7;               // Character level
+  repeated string ships = 8;     // Owned ships
+  string avatar_url = 9;         // Character avatar image
+  string account_id = 10;        // Account ID associated with character
+  CharacterState state = 11;     // Character state/status (enum)
+  int64 created_at = 12;         // Character creation timestamp
+  int64 updated_at = 13;         // Character last update timestamp
+}
+
+message GameCacheData {
+  string universe = 1;           // Universe/server shard
+  string version = 2;            // Game version
+  repeated string owned_items = 3; // Owned game items
+  string last_location = 4;      // Last known location
+}
+
+message UniverseData {
+  string region = 1;             // Universe region
+  string shard = 2;              // Universe shard (PU, etc.)
+  string environment = 3;        // Universe environment
+  string server_id = 4;          // Universe server ID
+  string version = 5;            // Universe version
+  string instance_id = 6;        // Universe instance identifier
+}
+
+message PermissionsData {
+  bool game_access = 1;          // Whether user has game access
+  bool chat_access = 2;          // Whether user has chat access
+  bool voice_access = 3;         // Whether user has voice access
+  bool admin_access = 4;         // Whether user has admin access
+  repeated string features = 5;  // Enabled feature permissions
+  repeated string roles = 6;     // User role permissions
+  bool analytics_access = 7;     // Whether user has analytics access
+  bool file_access = 8;          // Whether user has file access
+  bool character_access = 9;     // Whether user has character access
+  bool universe_access = 10;     // Whether user has universe access
+}
+
+message StarNetworkData {
+  string services_endpoint = 1;  // Star Network services endpoint
+  string relay_endpoint = 2;     // Network relay endpoint
+  string matchmaking_endpoint = 3; // Matchmaking service endpoint
+  string telemetry_endpoint = 4; // Telemetry service endpoint
+  repeated string backup_endpoints = 5; // Backup service endpoints
+  string region = 6;             // Network region
+  bool ssl_enabled = 7;          // Whether SSL is enabled
+  string hostname = 8;           // Star Network hostname
+  int32 port = 9;                // Star Network port
+  
+  // Additional fields based on client implementation analysis
+  string login_phase = 10;       // Current login phase (e.g., "Frontend_Login_Phase_Legacy")
+  int32 login_state = 11;        // Login state (0-5: unknown, initiated, processing, completed, failed, cancelled)
+  string session_token = 12;     // Session token for Star Network communication
+  bool legacy_mode = 13;         // Whether using legacy login mode
+  string player_session_id = 14; // Player session manager identifier
+  int64 last_update_time = 15;   // Last update timestamp from Star Network
+  bool network_ready = 16;       // Whether Star Network is ready for communication
+  string auth_endpoint = 17;     // Authentication endpoint for Star Network
+  int32 connection_timeout = 18; // Connection timeout in seconds
+  int32 retry_count = 19;        // Number of retry attempts for failed connections
+  
+  // Connection and account state tracking based on log analysis
+  ConnectionState connection_state = 20; // Current connection state
+  AccountState account_state = 21;       // Current account state
+  string game_version_identifier = 22;   // Game version identifier (e.g., "01a12935-abc669c4")
+  ErrorCode last_error_code = 23;        // Last error code (standardized enum)
+  string error_message = 24;             // Last error message
+  bool transport_security = 25;          // Whether transport security is enabled (0/1)
+  string grpc_endpoint = 26;             // gRPC endpoint being used
+  bool reuse_channel = 27;               // Whether reusing existing gRPC channel
+  int64 last_connection_time = 28;       // Last successful connection timestamp
+  int64 last_disconnect_time = 29;       // Last disconnect timestamp
+  
+  // Additional streaming and system information
+  repeated StreamInfo active_streams = 30; // Active CigTrace streams
+  int32 render_width = 31;               // Render resolution width (e.g., 3440)
+  int32 render_height = 32;              // Render resolution height (e.g., 1440)
+  float render_scale = 33;               // Render scale factor (e.g., 1.00)
+  QuitCause quit_cause = 34;             // System quit cause code (standardized enum)
+  string quit_reason = 35;               // System quit reason text
+  bool star_animation_initialized = 36;  // Whether StarAnimation PostInit completed
+  SystemState system_state = 37;         // Current system state
+  
+  // Connection stability metrics
+  int32 reconnect_attempts = 38;         // Number of reconnection attempts in current session
+  int32 successful_logins = 39;          // Number of successful logins in session
+  int32 connection_failures = 40;        // Number of connection failures in session
+  int64 session_start_time = 41;         // When current session started
+  bool backend_responsive = 42;          // Whether backend services are responsive
+  
+  // Login flow tracking based on real client data
+  bool entitlements_started = 43;        // Whether entitlements processing started
+  bool processing_queue_joined = 44;     // Whether joined processing queue
+  bool character_status_received = 45;   // Whether character status update received
+  bool account_reconciled = 46;          // Whether account reconciliation completed
+  bool login_completed = 47;             // Whether login completed message received
+  bool jwt_updated = 48;                 // Whether JWT was successfully updated
+  bool legacy_login_started = 49;        // Whether legacy login started
+  bool legacy_login_success = 50;        // Whether legacy login succeeded
+  bool both_logins_completed = 51;       // Whether both logins completed
+  string user_handle = 52;               // User handle from legacy login
+  int32 login_queue_position = 53;       // Position in login queue
+  
+  // Service endpoints with transport security
+  repeated ServiceEndpoint active_services = 54; // Active service connections
+}
+
+message StreamInfo {
+  string stream_type = 1;        // Type of stream (e.g., "CigTrace")
+  string result = 2;             // Stream result (e.g., "OK(0)")
+  int64 started_time = 3;        // When stream was started
+  bool active = 4;               // Whether stream is currently active
+  string team = 5;               // Team responsible (e.g., "Team_OnlineTech")
+}
+
+message ServiceEndpoint {
+  string service_name = 1;       // Service name (e.g., "sc.external.services.login.v1.LoginService")
+  string endpoint = 2;           // Endpoint URL (e.g., "dns:///127.0.0.1:5678")
+  bool transport_security = 3;   // Whether transport security is enabled
+  bool channel_reused = 4;       // Whether channel was reused
+  bool active = 5;               // Whether service is currently active
+  int64 connected_at = 6;        // When service connected
+  string team = 7;               // Responsible team (e.g., "Team_OnlineTech")
+}
+
+message GameConfigData {
+  string version = 1;            // Game version
+  string build = 2;              // Game build number
+  string branch = 3;             // Game branch (LIVE, PTU, etc.)
+  string environment = 4;        // Game environment
+  repeated string features = 5;  // Enabled game features
+  string universe = 6;           // Universe configuration
+  string server_region = 7;      // Server region
+  string region = 8;             // Game region
+  string shard = 9;              // Game shard (PU, etc.)
+  string game_mode = 10;         // Game mode (persistent_universe, etc.)
+  string server_id = 11;         // Server ID
+}
+
+// Additional service messages
+message RefreshAuthRequest {
+  string refresh_token = 1;      // Refresh token
+  string session_id = 2;         // Current session ID
+}
+
+message RefreshAuthResponse {
+  bool success = 1;              // Refresh success
+  string new_auth_token = 2;     // New authentication token
+  string new_refresh_token = 3;  // New refresh token
+  int64 expires_at = 4;          // New token expiration
+  string error_message = 5;      // Error if refresh failed
+}
+
+message ValidateTokenRequest {
+  string auth_token = 1;         // Token to validate
+  string session_id = 2;         // Session ID for context
+}
+
+message ValidateTokenResponse {
+  bool is_valid = 1;             // Whether token is valid
+  int64 expires_at = 2;          // Token expiration time
+  UserProfile user_profile = 3;  // User information if valid
+  repeated string permissions = 4; // User permissions
+}
+
+message VerifyDeviceRequest {
+  string device_verification_token = 1; // Token from login response
+  string verification_code = 2;          // Code sent to user's device/email
+  string session_id = 3;                 // Session ID
+}
+
+message VerifyDeviceResponse {
+  bool success = 1;              // Verification success
+  string auth_token = 2;         // Auth token if successful
+  string error_message = 3;      // Error if verification failed
+  bool device_trusted = 4;       // Whether device is now trusted
+}
+
+message Complete2FARequest {
+  string session_id = 1;         // Session ID from initial login
+  string totp_code = 2;          // Time-based one-time password
+  string backup_code = 3;        // Backup recovery code (alternative to TOTP)
+  bool trust_device = 4;         // Whether to trust this device
+}
+
+message Complete2FAResponse {
+  bool success = 1;              // 2FA completion success
+  string auth_token = 2;         // Auth token if successful
+  string refresh_token = 3;      // Refresh token
+  int64 expires_at = 4;          // Token expiration
+  string error_message = 5;      // Error if 2FA failed
+  UserProfile user_profile = 6;  // User profile information
+}
+
+message UpdateFromStarNetworkRequest {
+  string session_id = 1;         // Session ID for the update
+  StarNetworkData network_data = 2; // Updated Star Network configuration
+  int32 login_state = 3;         // Current login state (0-5)
+  string login_phase = 4;        // Login phase identifier
+  bool legacy_mode = 5;          // Whether using legacy login mode
+  string player_session_id = 6;  // Player session manager ID
+  bytes client_data = 7;         // Binary client data/timestamp
+  int64 timestamp = 8;           // Update timestamp
+}
+
+message UpdateFromStarNetworkResponse {
+  bool success = 1;              // Update success status
+  string error_message = 2;      // Error message if update failed
+  StarNetworkData updated_network_data = 3; // Updated network configuration
+  bool login_completed = 4;      // Whether login process is completed
+  string next_phase = 5;         // Next login phase to transition to
+  AuthenticationResult auth_result = 6; // Authentication result if applicable
+  UserProfile user_profile = 7;  // User profile if login completed
+  CacheData cache_data = 8;      // Updated cache data
+}
+
+message SetLobbyReadyRequest {
+  string session_id = 1;         // Session ID for the lobby
+  bool ready = 2;                // Whether player is ready
+  string lobby_id = 3;           // Lobby identifier (optional)
+  string player_id = 4;          // Player identifier
+  bytes client_data = 5;         // Binary client data/timestamp
+  int64 timestamp = 6;           // Request timestamp
+}
+
+message SetLobbyReadyResponse {
+  bool success = 1;              // Ready status set successfully
+  string error_message = 2;      // Error message if failed
+  string ticket = 3;             // RPC call ticket/identifier
+  bool lobby_ready = 4;          // Whether entire lobby is ready
+  repeated string ready_players = 5; // List of ready player IDs
+  int32 total_players = 6;       // Total players in lobby
+  int32 ready_count = 7;         // Number of ready players
+  int64 ready_timeout = 8;       // Timeout for ready status
+}
+
+message MonitorConnectionRequest {
+  string session_id = 1;         // Session ID to monitor
+  ConnectionState current_state = 2; // Current connection state
+  AccountState current_account_state = 3; // Current account state
+  int32 reconnect_attempts = 4;  // Number of reconnection attempts
+  int64 last_successful_connection = 5; // Last successful connection time
+  repeated int32 recent_error_codes = 6; // Recent error codes (e.g., 7, 19000)
+  string game_version_identifier = 7; // Game version for monitoring
+}
+
+message MonitorConnectionResponse {
+  bool connection_healthy = 1;   // Whether connection is considered healthy
+  string recommendation = 2;     // Recommended action (retry, wait, abort)
+  int32 retry_delay_seconds = 3; // Recommended retry delay
+  int32 max_retries = 4;         // Maximum retries before giving up
+  bool backend_responsive = 5;   // Whether backend services are responsive
+  string status_message = 6;     // Human-readable status message
+  repeated StreamInfo recommended_streams = 7; // Streams to establish
+}
+
+message ReportErrorRequest {
+  string session_id = 1;         // Session ID where error occurred
+  int32 error_code = 2;          // Error code (7, 19000, etc.)
+  string error_message = 3;      // Error message text
+  string context = 4;            // Context where error occurred
+  ConnectionState connection_state = 5; // Connection state when error occurred
+  AccountState account_state = 6; // Account state when error occurred
+  int64 timestamp = 7;           // When error occurred
+  string team = 8;               // Team context (Team_UI, Team_OnlineTech, etc.)
+  int32 quit_cause = 9;          // Quit cause if system is shutting down
+  string quit_reason = 10;       // Quit reason text
+}
+
+message ReportErrorResponse {
+  bool acknowledged = 1;         // Whether error was acknowledged
+  string tracking_id = 2;        // Error tracking identifier
+  bool should_retry = 3;         // Whether client should retry
+  bool should_quit = 4;          // Whether client should quit
+  string user_message = 5;       // Message to display to user
+  int32 retry_delay_seconds = 6; // Delay before retry
+}
+
+message ProcessEntitlementsRequest {
+  string session_id = 1;         // Session ID
+  string account_urn = 2;        // Account URN (e.g., "urn:sc:platform:account:integer:1000001")
+  string player_urn = 3;         // Player URN (e.g., "urn:sc:global:player:geid:200146295196")
+  bool join_processing_queue = 4; // Whether to join processing queue
+}
+
+message ProcessEntitlementsResponse {
+  bool success = 1;              // Entitlement processing success
+  string command_id = 2;         // Command ID for tracking (UUID)
+  string status = 3;             // Processing status
+  int32 queue_position = 4;      // Position in processing queue
+  string estimated_wait_time = 5; // Estimated processing time
+}
+
+message ReconcileAccountRequest {
+  string session_id = 1;         // Session ID
+  string account_urn = 2;        // Account URN
+  string player_urn = 3;         // Player URN
+  string command_id = 4;         // Command ID from entitlement processing
+}
+
+message ReconcileAccountResponse {
+  bool success = 1;              // Reconciliation success
+  string command_id = 2;         // Command ID for tracking
+  ReconcileAccountStatus status = 3; // Current reconciliation status
+  ReconcileAccountPhase phase = 4;   // Current reconciliation phase
+  string details = 5;            // Phase details/progress message
+  int32 ltp_items_processed = 6; // Long-Term persistence items processed
+  int32 platform_items_processed = 7; // Platform items processed
+  int32 entitlements_processed = 8;   // Entitlements processed
+  bool reconciliation_complete = 9;   // Whether reconciliation is complete
+}
+
+message UpdateCharacterStatusRequest {
+  string session_id = 1;         // Session ID
+  string account_id = 2;         // Account ID
+  string player_geid = 3;        // Player Global Entity ID
+}
+
+message UpdateCharacterStatusResponse {
+  bool success = 1;              // Character status update success
+  repeated CharacterCacheData characters = 2; // Updated character data
+  string primary_character_geid = 3; // Primary character GEID
+}
+
+// MITM Custom Data Injection for Development/Testing
+message SendCustomDataRequest {
+  string session_id = 1;         // Target session ID
+  CustomDataType data_type = 2;  // Type of custom data (using enum for type safety)
+  string custom_data = 3;        // Custom data/code to send to client
+  bytes binary_data = 4;         // Binary custom data (optional)
+  bool execute_immediately = 5;  // Whether to execute data immediately on client
+  int32 priority = 6;            // Execution priority (higher = more urgent)
+  int64 expires_at = 7;          // When this custom data expires
+  repeated string target_systems = 8; // Target client systems (UI, Network, Game, etc.)
+}
+
+message SendCustomDataResponse {
+  bool success = 1;              // Custom data sent successfully
+  string error_message = 2;      // Error message if failed
+  string execution_id = 3;       // Execution tracking ID
+  bool client_acknowledged = 4;  // Whether client acknowledged receipt
+  string client_response = 5;    // Response from client (if any)
+}
+
+// Development Login Dialog Configuration
+message DevLoginDialogConfig {
+  DevLoginDialogMode show_mode = 1; // Mode for showing development login dialog (using enum)
+  bool allow_offline_mode = 2;   // Allow offline/local mode login
+  bool show_debug_options = 3;   // Show debug options in dialog
+  string default_username = 4;   // Default username to populate
+  string default_server = 5;     // Default server to connect to
+  repeated string server_options = 6; // Available server options
+  bool enable_auto_login = 7;    // Enable automatic login without dialog
+  string custom_title = 8;       // Custom dialog title
+  string custom_message = 9;     // Custom message to display
+}
+
+enum ReconcileAccountPhase {
+  RECONCILE_ACCOUNT_PHASE_UNSPECIFIED = 0;
+  RECONCILE_ACCOUNT_PHASE_LTP = 1;          // Long-Term persistence processing
+  RECONCILE_ACCOUNT_PHASE_PLATFORM = 2;    // Platform items/entitlements processing
+}
+
+// Development/Debug enums for MITM and testing
+enum DevLoginDialogMode {
+  DEV_LOGIN_DIALOG_DISABLED = 0;           // Don't show development login dialog
+  DEV_LOGIN_DIALOG_ALWAYS = 1;             // Always show development login dialog
+  DEV_LOGIN_DIALOG_IF_MISSING = 2;         // Only show if loginData.json is missing
+}
+
+enum CustomDataType {
+  CUSTOM_DATA_UNKNOWN = 0;
+  CUSTOM_DATA_CONSOLE_COMMAND = 1;         // Console command to execute
+  CUSTOM_DATA_DEBUG_FLAG = 2;              // Debug flag to set
+  CUSTOM_DATA_CONFIG_OVERRIDE = 3;         // Configuration override
+  CUSTOM_DATA_UI_INJECTION = 4;            // UI code injection
+  CUSTOM_DATA_NETWORK_OVERRIDE = 5;        // Network configuration override
+  CUSTOM_DATA_GAME_STATE = 6;              // Game state modification
+  CUSTOM_DATA_TELEMETRY = 7;               // Custom telemetry data
+}
+
+// Core enums for authentication and system state
+enum AuthStatus {
+  AUTH_STATUS_UNKNOWN = 0;
+  AUTH_STATUS_SUCCESS = 1;
+  AUTH_STATUS_INVALID_CREDENTIALS = 2;
+  AUTH_STATUS_ACCOUNT_LOCKED = 3;
+  AUTH_STATUS_ACCOUNT_DISABLED = 4;
+  AUTH_STATUS_REQUIRES_2FA = 5;
+  AUTH_STATUS_REQUIRES_DEVICE_VERIFICATION = 6;
+  AUTH_STATUS_EXPIRED_TOKEN = 7;
+  AUTH_STATUS_RATE_LIMITED = 8;
+  AUTH_STATUS_INTERNAL_ERROR = 9;
+}
+
+enum ChallengeType {
+  CHALLENGE_TYPE_UNKNOWN = 0;
+  CHALLENGE_TYPE_CAPTCHA = 1;
+  CHALLENGE_TYPE_EMAIL_VERIFICATION = 2;
+  CHALLENGE_TYPE_SMS_VERIFICATION = 3;
+  CHALLENGE_TYPE_SECURITY_QUESTION = 4;
+  CHALLENGE_TYPE_DEVICE_VERIFICATION = 5;
+}
+
+enum CharacterState {
+  CHARACTER_STATE_UNKNOWN = 0;
+  CHARACTER_STATE_CURRENT = 1;     // STATE_CURRENT
+  CHARACTER_STATE_INACTIVE = 2;    // Inactive character
+  CHARACTER_STATE_ARCHIVED = 3;    // Archived character
+  CHARACTER_STATE_DELETED = 4;     // Deleted character
+}
+
+enum ConnectionState {
+  CONNECTION_STATE_UNKNOWN = 0;
+  CONNECTION_STATE_CONNECTING = 1;
+  CONNECTION_STATE_CONNECTED = 2;
+  CONNECTION_STATE_DISCONNECTED = 3;
+  CONNECTION_STATE_FAILED = 4;
+}
+
+enum AccountState {
+  ACCOUNT_STATE_UNKNOWN = 0;
+  ACCOUNT_STATE_LOGIN_SUCCESS = 1;     // kAccountLoginSuccess
+  ACCOUNT_STATE_FAILED = 2;            // kAccountFailed
+  ACCOUNT_STATE_CONNECTION_LOST = 3;   // kAccountConnectionLost
+}
+
+enum SystemState {
+  SYSTEM_STATE_UNKNOWN = 0;
+  SYSTEM_STATE_INITIALIZING = 1;       // System starting up
+  SYSTEM_STATE_RUNNING = 2;            // System running normally
+  SYSTEM_STATE_SHUTTING_DOWN = 3;      // System shutting down
+  SYSTEM_STATE_FAILED = 4;             // System in failed state
+}
+
+enum ErrorCode {
+  ERROR_CODE_UNKNOWN = 0;
+  ERROR_CODE_CONNECTION_FAILED = 7;    // Connection failed error
+  ERROR_CODE_BACKEND_UNRESPONSIVE = 19000; // Back-end services unresponsive
+}
+
+enum QuitCause {
+  QUIT_CAUSE_UNKNOWN = 0;
+  QUIT_CAUSE_USER_REQUEST = 30016;     // User initiated quit (console command)
+  QUIT_CAUSE_BACKEND_UNRESPONSIVE = 30024; // Back-end services unresponsive
+}
+
+enum ReconcileAccountStatus {
+  RECONCILE_ACCOUNT_STATUS_UNKNOWN = 0;
+  RECONCILE_ACCOUNT_STATUS_EXECUTING = 1;   // Currently executing reconciliation
+  RECONCILE_ACCOUNT_STATUS_COMPLETE = 2;    // Reconciliation completed successfully
+  RECONCILE_ACCOUNT_STATUS_FAILED = 3;      // Reconciliation failed
+}
+
+// Login notification messages for streaming
+message LoginNotification {
+  oneof notification_type {
+    AccountLoginCharacterStatus character_status = 1;
+    ReconcileAccountUpdateNotification reconcile_update = 2;
+    LoginCompletedNotification login_completed = 3;
+  }
+}
+
+message AccountLoginCharacterStatus {
+  repeated CharacterCacheData characters = 1;
+  string account_id = 2;
+  int64 timestamp = 3;
+}
+
+message ReconcileAccountUpdateNotification {
+  string account_id = 1;
+  ReconcileAccountStatus status = 2;
+  ReconcileAccountPhase phase = 3;
+  string details = 4;
+  int32 ltp_items_processed = 5;
+  int32 platform_items_processed = 6;
+  int32 entitlements_processed = 7;
+  bool reconciliation_complete = 8;
+  int64 timestamp = 9;
+}
+
+message LoginCompletedNotification {
+  string account_id = 1;
+  string session_id = 2;
+  bool success = 3;
+  int64 timestamp = 4;
+}
+
+// Request message for LoginNotificationStream
+message LoginNotificationStreamRequest {
+  string account_id = 1;
+  string session_id = 2;
+  string auth_token = 3;
+}
+
+// Request message for CharacterStatus
+message CharacterStatusRequest {
+  string account_id = 1;
+  string session_id = 2;
+  string auth_token = 3;
+}
+
+// Response message for CharacterStatus
+message CharacterStatusResponse {
+  repeated CharacterCacheData characters = 1;
+  bool success = 2;
+  string error_message = 3;
+}

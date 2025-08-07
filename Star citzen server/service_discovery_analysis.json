@@ -1,0 +1,73 @@
+{
+  "timestamp": "2025-08-05T02:44:02.319981",
+  "connection": "127.0.0.1:59380",
+  "packet_size": 92,
+  "hex_data": "54000000efbeadde0a13646966662e736572766963652e6f6e6c696e65123b0a185374617220436974697a656e2047616d6520436c69656e74120973635f636c69656e741a1408b2bb9dac94f2c6874a1097e5e7f8819aaa83521800",
+  "ascii_data": "T.........diff.service.online.;..Star Citizen Game Client..sc_client...........J.........R..",
+  "protocol_analysis": {
+    "header": {
+      "length": 84,
+      "length_hex": "54000000",
+      "magic_bytes": "efbeadde",
+      "magic_ascii": "\u00ef\u00be\u00ad\u00de"
+    },
+    "protocol_valid": true,
+    "payload": {
+      "size": 84,
+      "hex": "0a13646966662e736572766963652e6f6e6c696e65123b0a185374617220436974697a656e2047616d6520436c69656e74120973635f636c69656e741a1408b2bb9dac94f2c6874a1097e5e7f8819aaa83521800",
+      "ascii": "\n\u0013diff.service.online\u0012;\n\u0018Star Citizen Game Client\u0012\tsc_client\u001a\u0014\b\u00b2\u00bb\u009d\u00ac\u0094\u00f2\u00c6\u0087J\u0010\u0097\u00e5\u00e7\u00f8\u0081\u009a\u00aa\u0083R\u0018\u0000"
+    }
+  },
+  "protobuf_analysis": {},
+  "client_info": {
+    "client_type": "Star Citizen Game Client",
+    "client_identifier": "sc_client",
+    "service_query": "diff.service.online"
+  },
+  "server_response_analysis": {
+    "response_type": "ServiceDiscoveryResponse",
+    "required_fields": [
+      "service_online: true",
+      "server_version",
+      "server_time",
+      "endpoints[]"
+    ],
+    "critical_endpoints": [
+      {
+        "service_name": "authentication_service",
+        "host": "127.0.0.1",
+        "port": 8443,
+        "ssl_enabled": true,
+        "protocols": [
+          "https",
+          "websocket"
+        ]
+      },
+      {
+        "service_name": "diffusion_service",
+        "host": "127.0.0.1",
+        "port": 8001,
+        "ssl_enabled": false,
+        "protocols": [
+          "http",
+          "websocket"
+        ]
+      },
+      {
+        "service_name": "game_server",
+        "host": "127.0.0.1",
+        "port": 5678,
+        "ssl_enabled": false,
+        "protocols": [
+          "grpc",
+          "http2"
+        ]
+      }
+    ],
+    "protocol_format": {
+      "header": "4-byte length (little-endian)",
+      "magic": "0xefbeadde",
+      "payload": "protobuf ServiceDiscoveryResponse"
+    }
+  }
+}

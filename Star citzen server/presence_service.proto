@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package sc.external.services.presence.v1;
+
+service PresenceService {
+  rpc PresenceStream (PresenceRequest) returns (stream PresenceUpdate);
+  rpc UpdatePresence (UpdatePresenceRequest) returns (UpdatePresenceResponse);
+}
+
+message PresenceRequest {
+  string session_id = 1;
+  string player_id = 2;
+}
+
+message PresenceUpdate {
+  string player_id = 1;
+  string status = 2;
+  string location = 3;
+  string activity = 4;
+  int64 timestamp = 5;
+  bool is_online = 6;
+}
+
+message UpdatePresenceRequest {
+  string session_id = 1;
+  string status = 2;
+  string location = 3;
+  string activity = 4;
+}
+
+message UpdatePresenceResponse {
+  bool success = 1;
+  string message = 2;
+}

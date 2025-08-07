@@ -1,0 +1,17 @@
+{
+  "access_token": "fa8a335e-c3de-da45-b336-ef1ffc15d7eb",
+  "account_id": "1000001",
+  "displayname": "TestPilot",
+  "email": "test.pilot@robertsspaceindustries.com",
+  "character_id": "char_testpilot_001",
+  "server_version": "4.2.151.51347",
+  "game_version": "sc-alpha-4.2.0",
+  "environment": "PUB",
+  "region": "us-east-1",
+  "location": "Stanton_ArcCorp_Area18",
+  "universe": "persistent_universe",
+  "server_instance": "server_00120",
+  "instance_id": "instance_1754500660",
+  "client_endpoint": "dns:///127.0.0.1:5678",
+  "server_ip": "127.0.0.1"
+}

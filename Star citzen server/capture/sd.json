@@ -1,0 +1,164 @@
+[
+  {
+    "timestamp": "2025-08-07T22:53:52.581782",
+    "direction": "client->server",
+    "size": 93,
+    "type": "Service Discovery",
+    "hex_data": "55000000efbeadde0a13646966662e736572766963652e6f6e6c696e65123c0a185374617220436974697a656e2047616d6520436c69656e74120973635f636c69656e741a1508fcdca9eaded0bbf04010a1d7a180f0bbd1b39e011800",
+    "ascii_data": "U.........diff.service.online.<..Star Citizen Game Client..sc_client...........@.............",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:53:52.582900",
+    "direction": "server->client",
+    "size": 178,
+    "type": "SC Binary Protocol",
+    "hex_data": "aa000000efbeadde0801123a0a1661757468656e7469636174696f6e5f7365727669636512093132372e302e302e3118ae2c20012a0568747470732a09776562736f636b657412320a11646966667573696f6e5f7365727669636512093132372e302e302e3118c03e2a04687474702a09776562736f636b657412280a0b67616d655f73657276657212093132372e302e302e3118ae2c2a04677270632a0568747470321a05312e302e3020c6b5e3b08833",
+    "ascii_data": "...........:..authentication_service..127.0.0.1.., .*.https*.websocket.2..diffusion_service..127.0.0.1..>*.http*.websocket.(..game_server..127.0.0.1..,*.grpc*.http2..1.0.0 .....3",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:53:52.704833",
+    "direction": "client->server",
+    "size": 31,
+    "type": "Lobby Destinations",
+    "hex_data": "17000000efbeadde0a11636d73675f6c735f7265715f646573747312001800",
+    "ascii_data": "..........cmsg_ls_req_dests....",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:53:52.705706",
+    "direction": "server->client",
+    "size": 121,
+    "type": "SC Binary Protocol",
+    "hex_data": "71000000efbeadde0a5d0a0c7365727665725f3030313230122450657273697374656e7420556e697665727365202d205374616e746f6e2053797374656d1a093132372e302e302e3120ae2c280130323a1370657273697374656e745f756e6976657273654001120975732d656173742d3118c1b6e3b08833",
+    "ascii_data": "q........]..server_00120.$Persistent Universe - Stanton System..127.0.0.1 .,(.02:.persistent_universe@...us-east-1......3",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:53:52.898576",
+    "direction": "client->server",
+    "size": 38,
+    "type": "Region Setup",
+    "hex_data": "1e000000efbeadde0a12636d73675f7365745f726567696f6e5f696412060800100018001800",
+    "ascii_data": "..........cmsg_set_region_id..........",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:53:52.899463",
+    "direction": "server->client",
+    "size": 95,
+    "type": "SC Binary Protocol",
+    "hex_data": "57000000efbeadde0801120975732d656173742d311a1e526567696f6e20636f6e66696775726564207375636365737366756c6c7922280a0b67616d655f73657276657212093132372e302e302e3118ae2c2a04677270632a056874747032",
+    "ascii_data": "W...........us-east-1..Region configured successfully\"(..game_server..127.0.0.1..,*.grpc*.http2",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:02.578099",
+    "direction": "client->server",
+    "size": 60,
+    "type": "Heartbeat",
+    "hex_data": "34000000efbeadde0a0968656172746265617412250a23080010ffffffffffffffffff0118ffffffffffffffffff0120ffffffffffffffffff011800",
+    "ascii_data": "4.........heartbeat.%.#........................ ............",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:02.579022",
+    "direction": "server->client",
+    "size": 66,
+    "type": "Heartbeat",
+    "hex_data": "3a000000efbeadde0a0d6865617274626561745f61636b10d283e4b088331a1e73635f73657373696f6e5f313735343539363433325f38326361393662372001281e",
+    "ascii_data": ":.........heartbeat_ack......3..sc_session_1754596432_82ca96b7 .(.",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:12.580291",
+    "direction": "client->server",
+    "size": 51,
+    "type": "Heartbeat",
+    "hex_data": "2b000000efbeadde0a09686561727462656174121c0a1a0804100018ffffffffffffffffff0120ffffffffffffffffff011800",
+    "ascii_data": "+.........heartbeat................... ............",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:12.581332",
+    "direction": "server->client",
+    "size": 66,
+    "type": "Heartbeat",
+    "hex_data": "3a000000efbeadde0a0d6865617274626561745f61636b10e4d1e4b088331a1e73635f73657373696f6e5f313735343539363433325f38326361393662372001281e",
+    "ascii_data": ":.........heartbeat_ack......3..sc_session_1754596432_82ca96b7 .(.",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:22.576899",
+    "direction": "client->server",
+    "size": 51,
+    "type": "Heartbeat",
+    "hex_data": "2b000000efbeadde0a09686561727462656174121c0a1a0804100018ffffffffffffffffff0120ffffffffffffffffff011800",
+    "ascii_data": "+.........heartbeat................... ............",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:22.577677",
+    "direction": "server->client",
+    "size": 66,
+    "type": "Heartbeat",
+    "hex_data": "3a000000efbeadde0a0d6865617274626561745f61636b10f19fe5b088331a1e73635f73657373696f6e5f313735343539363433325f38326361393662372001281e",
+    "ascii_data": ":.........heartbeat_ack......3..sc_session_1754596432_82ca96b7 .(.",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:32.574719",
+    "direction": "client->server",
+    "size": 51,
+    "type": "Heartbeat",
+    "hex_data": "2b000000efbeadde0a09686561727462656174121c0a1a0804100018ffffffffffffffffff0120ffffffffffffffffff011800",
+    "ascii_data": "+.........heartbeat................... ............",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:32.575674",
+    "direction": "server->client",
+    "size": 66,
+    "type": "Heartbeat",
+    "hex_data": "3a000000efbeadde0a0d6865617274626561745f61636b10ffede5b088331a1e73635f73657373696f6e5f313735343539363433325f38326361393662372001281e",
+    "ascii_data": ":.........heartbeat_ack......3..sc_session_1754596432_82ca96b7 .(.",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:42.579706",
+    "direction": "client->server",
+    "size": 51,
+    "type": "Heartbeat",
+    "hex_data": "2b000000efbeadde0a09686561727462656174121c0a1a0804100018ffffffffffffffffff0120ffffffffffffffffff011800",
+    "ascii_data": "+.........heartbeat................... ............",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:42.580503",
+    "direction": "server->client",
+    "size": 66,
+    "type": "Heartbeat",
+    "hex_data": "3a000000efbeadde0a0d6865617274626561745f61636b1094bce6b088331a1e73635f73657373696f6e5f313735343539363433325f38326361393662372001281e",
+    "ascii_data": ":.........heartbeat_ack......3..sc_session_1754596432_82ca96b7 .(.",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:52.578969",
+    "direction": "client->server",
+    "size": 51,
+    "type": "Heartbeat",
+    "hex_data": "2b000000efbeadde0a09686561727462656174121c0a1a0804100018ffffffffffffffffff0120ffffffffffffffffff011800",
+    "ascii_data": "+.........heartbeat................... ............",
+    "connection": "127.0.0.1:50639"
+  },
+  {
+    "timestamp": "2025-08-07T22:54:52.579751",
+    "direction": "server->client",
+    "size": 66,
+    "type": "Heartbeat",
+    "hex_data": "3a000000efbeadde0a0d6865617274626561745f61636b10a38ae7b088331a1e73635f73657373696f6e5f313735343539363433325f38326361393662372001281e",
+    "ascii_data": ":.........heartbeat_ack......3..sc_session_1754596432_82ca96b7 .(.",
+    "connection": "127.0.0.1:50639"
+  }
+]

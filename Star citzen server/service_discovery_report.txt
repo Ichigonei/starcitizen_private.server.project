@@ -1,0 +1,27 @@
+STAR CITIZEN SERVICE DISCOVERY PACKET ANALYSIS REPORT
+================================================================================
+Timestamp: 2025-08-05T02:44:02.319981
+Connection: 127.0.0.1:59380
+Packet Size: 92 bytes
+
+PROTOCOL STRUCTURE:
+  Length: 84 bytes
+  Magic: efbeadde (ï¾­Þ)
+  Valid Protocol: True
+
+CLIENT INFORMATION:
+  client_type: Star Citizen Game Client
+  client_identifier: sc_client
+  service_query: diff.service.online
+
+EXPECTED SERVER RESPONSE:
+  Type: ServiceDiscoveryResponse
+  Required Fields:
+    - service_online: true
+    - server_version
+    - server_time
+    - endpoints[]
+  Critical Endpoints:
+    - authentication_service: 127.0.0.1:8443
+    - diffusion_service: 127.0.0.1:8001
+    - game_server: 127.0.0.1:5678

@@ -1,0 +1,17 @@
+2025-08-07 23:04:32,074 - INFO - 🚀 Starting Star Citizen Dedicated Login Server
+2025-08-07 23:04:32,078 - INFO - ✅ Login server running on http://127.0.0.1:9000
+2025-08-07 23:04:32,079 - INFO - 🌐 Web interface: http://127.0.0.1:9000
+2025-08-07 23:04:32,079 - INFO - 🔍 Verify endpoint: http://127.0.0.1:9000/verify
+2025-08-07 23:04:32,079 - INFO - 📊 Status page: http://127.0.0.1:9000/status
+2025-08-07 23:04:50,306 - INFO - HTTP 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-08-07 23:04:50,763 - INFO - HTTP 127.0.0.1 - code 404, message Page not found
+2025-08-07 23:04:50,763 - INFO - HTTP 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+2025-08-07 23:04:51,872 - INFO - 🔍 Raw POST data: b'email=test.pilot%40robertsspaceindustries.com&password=test_password_123'
+2025-08-07 23:04:51,873 - INFO - 🔍 Parsed form data: {'email': ['test.pilot@robertsspaceindustries.com'], 'password': ['test_password_123']}
+2025-08-07 23:04:51,873 - INFO - 🔐 Login attempt for: test.pilot@robertsspaceindustries.com
+2025-08-07 23:04:51,873 - INFO - ✅ Authentication successful - test.pilot@robertsspaceindustries.com
+2025-08-07 23:04:51,874 - INFO - ✅ Session created for test.pilot@robertsspaceindustries.com
+2025-08-07 23:04:51,874 - INFO - 🎫 JWT Token generated and stored in loginData.json
+2025-08-07 23:04:51,874 - INFO - 🔑 Session ID: sess_1754597091873_95781a1c
+2025-08-07 23:04:51,874 - INFO - 👤 Character: TestPilot (GEID: 200146295196)
+2025-08-07 23:04:51,874 - INFO - HTTP 127.0.0.1 - "POST /login HTTP/1.1" 200 -

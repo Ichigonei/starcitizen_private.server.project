@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package sc.external.services.analytics.v1;
+
+service AnalyticsService {
+  rpc CollectionStream (stream AnalyticsEvent) returns (stream AnalyticsResponse);
+  rpc SendEvent (AnalyticsEvent) returns (AnalyticsResponse);
+}
+
+message AnalyticsEvent {
+  string event_id = 1;
+  string event_type = 2;
+  string session_id = 3;
+  string player_id = 4;
+  int64 timestamp = 5;
+  map<string, string> properties = 6;
+  string client_version = 7;
+}
+
+message AnalyticsResponse {
+  bool success = 1;
+  string message = 2;
+  string tracking_id = 3;
+}

@@ -1,0 +1,83 @@
+{
+  "username": "test.pilot@robertsspaceindustries.com",
+  "email": "test.pilot@robertsspaceindustries.com",
+  "displayname": "TestPilot",
+  "nickname": "TestPilot",
+  "citizen_id": "2001462951",
+  "account_id": "1000001",
+  "session_id": "sess_1754168035784_3d800c34",
+  "token": "rsi_token_c781331dd6c04367a0d1d3dd7ff5376d",
+  "refresh_token": "rsi_refresh_73f4d1e301e4431b8a5a6be6beb83ec0",
+  "access_token": "rsi_access_852e9a97e1aa497d962a524464d41723",
+  "auth_token": "eyJ0eXAiOiAiSldUIiwgImFsZyI6ICJSUzI1NiJ9.eyJpc3MiOiAiaHR0cHM6Ly9yb2JlcnRzc3BhY2VpbmR1c3RyaWVzLmNvbSIsICJpYXQiOiAxNzU0MTY4MDM1LCAiZXhwIjogMTc1NDI1NDQzNSwgIm5iZiI6IDE3NTQxNjgwMzUsICJqdGkiOiAicnNpX2p3dF8yNTNiMDRhZWZlMjc0ZWRhIiwgInN1YiI6ICJnYW1lL1NDL2dlaWRfMjAwMTQ2Mjk1MV9hY2NvdW50XzEwMDAwMDEiLCAiYXVkIjogWyJyc2kvZ2FtZS9iZWFyZXIiLCAic3Rhci1jaXRpemVuIl0sICJhY2NvdW50X2lkIjogIjEwMDAwMDEiLCAiY2l0aXplbl9pZCI6ICIyMDAxNDYyOTUxIiwgImRpc3BsYXluYW1lIjogIlRlc3RQaWxvdCIsICJuaWNrbmFtZSI6ICJUZXN0UGlsb3QiLCAiZW1haWwiOiAidGVzdC5waWxvdEByb2JlcnRzc3BhY2VpbmR1c3RyaWVzLmNvbSIsICJpcEFkZHJlc3MiOiAiMTI3LjAuMC4xIiwgInVzZXJfYWdlbnQiOiAiU3RhckNpdGl6ZW4vNC4xLjE0OS4zNDg2IiwgImdhbWVfdmVyc2lvbiI6ICI0LjEuMTQ5LjM0ODYiLCAicmVnaW9uIjogInVzLWVhc3QtMSIsICJzaGFyZCI6ICJQVSIsICJnYW1lX21vZGUiOiAicGVyc2lzdGVudF91bml2ZXJzZSIsICJzZXJ2ZXJfaWQiOiAic2VydmVyXzAwMSIsICJzZXNzaW9uX2lkIjogInNlc3NfMTc1NDE2ODAzNTc4NCIsICJzY29wZSI6IFsiZ2FtZTphY2Nlc3MiLCAiZ2FtZTpwbGF5IiwgImdhbWU6Y2hhdCIsICJnYW1lOmZpbGVzIiwgImdhbWU6YW5hbHl0aWNzIl0sICJyb2xlcyI6IFsiY2l0aXplbiIsICJiYWNrZXIiLCAicGxheWVyIl0sICJhdXRoZW50aWNhdGVkIjogdHJ1ZSwgImxvZ2luX3RpbWUiOiAxNzU0MTY4MDM1fQ.LoginServerSignatureForStarCitizenAuthenticationSystemTestingPurposesThisEnsuresCompatibilityWithGameClientExpectationsForJWTTokenStructure",
+  "bearer_token": "Bearer eyJ0eXAiOiAiSldUIiwgImFsZyI6ICJSUzI1NiJ9.eyJpc3MiOiAiaHR0cHM6Ly9yb2JlcnRzc3BhY2VpbmR1c3RyaWVzLmNvbSIsICJpYXQiOiAxNzU0MTY4MDM1LCAiZXhwIjogMTc1NDI1NDQzNSwgIm5iZiI6IDE3NTQxNjgwMzUsICJqdGkiOiAicnNpX2p3dF8yNTNiMDRhZWZlMjc0ZWRhIiwgInN1YiI6ICJnYW1lL1NDL2dlaWRfMjAwMTQ2Mjk1MV9hY2NvdW50XzEwMDAwMDEiLCAiYXVkIjogWyJyc2kvZ2FtZS9iZWFyZXIiLCAic3Rhci1jaXRpemVuIl0sICJhY2NvdW50X2lkIjogIjEwMDAwMDEiLCAiY2l0aXplbl9pZCI6ICIyMDAxNDYyOTUxIiwgImRpc3BsYXluYW1lIjogIlRlc3RQaWxvdCIsICJuaWNrbmFtZSI6ICJUZXN0UGlsb3QiLCAiZW1haWwiOiAidGVzdC5waWxvdEByb2JlcnRzc3BhY2VpbmR1c3RyaWVzLmNvbSIsICJpcEFkZHJlc3MiOiAiMTI3LjAuMC4xIiwgInVzZXJfYWdlbnQiOiAiU3RhckNpdGl6ZW4vNC4xLjE0OS4zNDg2IiwgImdhbWVfdmVyc2lvbiI6ICI0LjEuMTQ5LjM0ODYiLCAicmVnaW9uIjogInVzLWVhc3QtMSIsICJzaGFyZCI6ICJQVSIsICJnYW1lX21vZGUiOiAicGVyc2lzdGVudF91bml2ZXJzZSIsICJzZXJ2ZXJfaWQiOiAic2VydmVyXzAwMSIsICJzZXNzaW9uX2lkIjogInNlc3NfMTc1NDE2ODAzNTc4NCIsICJzY29wZSI6IFsiZ2FtZTphY2Nlc3MiLCAiZ2FtZTpwbGF5IiwgImdhbWU6Y2hhdCIsICJnYW1lOmZpbGVzIiwgImdhbWU6YW5hbHl0aWNzIl0sICJyb2xlcyI6IFsiY2l0aXplbiIsICJiYWNrZXIiLCAicGxheWVyIl0sICJhdXRoZW50aWNhdGVkIjogdHJ1ZSwgImxvZ2luX3RpbWUiOiAxNzU0MTY4MDM1fQ.LoginServerSignatureForStarCitizenAuthenticationSystemTestingPurposesThisEnsuresCompatibilityWithGameClientExpectationsForJWTTokenStructure",
+  "star_network": {
+    "servicesendpoint": "http://127.0.0.1:8000",
+    "hostname": "127.0.0.1",
+    "port": 8000
+  },
+  "game_config": {
+    "version": "4.2.151.51347",
+    "region": "us-east-1",
+    "shard": "PU",
+    "game_mode": "persistent_universe",
+    "server_id": "server_001"
+  },
+  "character": {
+    "geid": "200146295196",
+    "name": "TestPilot",
+    "state": "STATE_CURRENT",
+    "created_at": 1754168035784,
+    "updated_at": 1754168035784,
+    "account_id": "1000001",
+    "location": "Stanton_ArcCorp_Area18",
+    "credits": 125000,
+    "reputation": {
+      "crusader": 0,
+      "microtech": 0,
+      "arccorp": 0,
+      "hurston": 0
+    }
+  },
+  "universe": {
+    "region": "us-east-1",
+    "shard": "PU",
+    "server_id": "server_001",
+    "instance_id": "instance_ce66e9d6"
+  },
+  "permissions": {
+    "game_access": true,
+    "chat_access": true,
+    "analytics_access": true,
+    "file_access": true,
+    "character_access": true,
+    "universe_access": true
+  },
+  "launcher_session": {
+    "authenticated": true,
+    "auth_time": 1754168035,
+    "expires_at": 1754254435,
+    "launcher_version": "2.0.3.756",
+    "client_id": "rsi_launcher_client"
+  },
+  "login_server": {
+    "server": "dedicated_login_server",
+    "version": "1.0",
+    "authenticated_at": 1754168035,
+    "session_id": "sess_1754168035784_3d800c34",
+    "status": "authenticated",
+    "config": {
+      "default_home_location": "Stanton_ArcCorp_Area18",
+      "eos_enabled": true,
+      "session_timeout": 86400
+    }
+  },
+  "eos_integration": {
+    "enabled": true,
+    "notifications": {
+      "login_status_changed": "EOS_Connect_RemoveNotifyLoginStatusChanged",
+      "enabled": true
+    },
+    "status": "active"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "characters": {
+    "4523147": {
+      "characters": [
+        {
+          "character_id": "char_4523147_default",
+          "account_id": "4523147",
+          "name": "Pilot_4523147",
+          "created_at": 1640013522396,
+          "last_played": 1752355397281,
+          "geid": 200004523147,
+          "state": "STATE_CURRENT",
+          "level": 1,
+          "location": {
+            "system": "Stanton",
+            "planet": "ArcCorp",
+            "area": "Area18"
+          },
+          "credits": 125000,
+          "ships": [
+            {
+              "ship_id": "ship_4523147_aurora",
+              "name": "Aurora MR",
+              "model": "RSI Aurora MR"
+            }
+          ],
+          "reputation": {
+            "bounty_hunters_guild": 0,
+            "advocacy": 0,
+            "crusader_security": 0
+          }
+        }
+      ],
+      "cached_at": 1752355397.281104
+    },
+    "1000001": {
+      "characters": [
+        {
+          "character_id": "char_1000001_default",
+          "account_id": "1000001",
+          "name": "Pilot_1000001",
+          "created_at": 1640008315601,
+          "last_played": 1752448627273,
+          "geid": 200001000001,
+          "state": "STATE_CURRENT",
+          "level": 1,
+          "location": {
+            "system": "Stanton",
+            "planet": "ArcCorp",
+            "area": "Area18"
+          },
+          "credits": 125000,
+          "ships": [
+            {
+              "ship_id": "ship_1000001_aurora",
+              "name": "Aurora MR",
+              "model": "RSI Aurora MR"
+            }
+          ],
+          "reputation": {
+            "bounty_hunters_guild": 0,
+            "advocacy": 0,
+            "crusader_security": 0
+          }
+        }
+      ],
+      "cached_at": 1752448627.2739723
+    }
+  },
+  "last_updated": 1752448627
+}

@@ -1,0 +1,112 @@
+2025-08-07 02:27:55,607 - INFO - [__main__] 🚀 Starting Google APIs HTTP server on 127.0.0.1:50052
+2025-08-07 02:27:55,612 - INFO - [__main__] ✅ Google APIs HTTP server running on 127.0.0.1:50052
+2025-08-07 02:27:55,612 - INFO - [__main__] 🔧 Handling HTTP endpoints:
+2025-08-07 02:27:55,612 - INFO - [__main__]    * POST /token (OAuth2 token refresh)
+2025-08-07 02:27:55,612 - INFO - [__main__]    * GET /token (OAuth2 token info)
+2025-08-07 02:27:55,612 - INFO - [__main__]    * Generic Google API HTTP endpoints
+2025-08-07 02:28:02,819 - INFO - [__main__] 📄 GET request to / from 127.0.0.1
+2025-08-07 02:28:02,820 - INFO - [__main__] 🌐 Generic GET request to /
+2025-08-07 02:28:02,820 - INFO - [__main__] HTTP "GET / HTTP/1.1" 200 -
+2025-08-07 02:28:02,830 - INFO - [__main__] ✅ Generic GET response sent
+2025-08-07 02:28:03,856 - INFO - [__main__] 🔄 POST request to /token from 127.0.0.1
+2025-08-07 02:28:03,857 - INFO - [__main__] 🔑 Processing OAuth2/STS token request via HTTP
+2025-08-07 02:28:03,857 - INFO - [__main__] 📝 POST data received: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange&requested_token_type=urn%3Aietf%3Aparams%3Aoauth%3Atoken-type%3Aaccess_token&subject_token_type=urn%3Aietf%3Aparams%3Aoauth%3Atoken...
+2025-08-07 02:28:03,858 - INFO - [__main__] 🔍 Token request - grant_type: urn:ietf:params:oauth:grant-type:token-exchange
+2025-08-07 02:28:03,858 - INFO - [__main__] 🔍 Token request - audience: https://127.0.0.1:8000
+2025-08-07 02:28:03,858 - INFO - [__main__] 🔍 Token request - requested_token_type: urn:ietf:params:oauth:token-type:access_token
+2025-08-07 02:28:03,858 - INFO - [__main__] ✅ STS Token Exchange response created (RFC 8693 compliant)
+2025-08-07 02:28:03,858 - INFO - [__main__] 📋 Exchange details - audience: https://127.0.0.1:8000, scope: https://127.0.0.1:8000
+2025-08-07 02:28:03,858 - INFO - [__main__] 📋 Options provided: {"userProject":"star-citizen-local"}
+2025-08-07 02:28:03,859 - INFO - [__main__] HTTP "POST /token HTTP/1.1" 200 -
+2025-08-07 02:28:03,859 - INFO - [__main__] ✅ Token response sent via HTTP
+2025-08-07 02:28:04,880 - INFO - [__main__] 🔄 POST request to /token from 127.0.0.1
+2025-08-07 02:28:04,880 - INFO - [__main__] 🔑 Processing OAuth2/STS token request via HTTP
+2025-08-07 02:28:04,880 - INFO - [__main__] 📝 POST data: grant_type=refresh_token&refresh_token=test_refresh_token_123&client_id=star-citizen-local&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform
+2025-08-07 02:28:04,880 - INFO - [__main__] 🔍 Token request - grant_type: refresh_token
+2025-08-07 02:28:04,880 - INFO - [__main__] 🔍 Token request - audience: 
+2025-08-07 02:28:04,880 - INFO - [__main__] 🔍 Token request - requested_token_type: 
+2025-08-07 02:28:04,881 - INFO - [__main__] ✅ OAuth2 Token Refresh response created
+2025-08-07 02:28:04,881 - INFO - [__main__] HTTP "POST /token HTTP/1.1" 200 -
+2025-08-07 02:28:04,881 - INFO - [__main__] ✅ Token response sent via HTTP
+2025-08-07 02:29:03,207 - INFO - [__main__] 📄 GET request to / from 127.0.0.1
+2025-08-07 02:29:03,208 - INFO - [__main__] 🌐 Generic GET request to /
+2025-08-07 02:29:03,208 - INFO - [__main__] HTTP "GET / HTTP/1.1" 200 -
+2025-08-07 02:29:03,208 - INFO - [__main__] ✅ Generic GET response sent
+2025-08-07 02:29:03,441 - INFO - [__main__] 🔄 POST request to /token from 127.0.0.1
+2025-08-07 02:29:03,441 - INFO - [__main__] 🔑 Processing OAuth2/STS token request via HTTP
+2025-08-07 02:29:03,441 - INFO - [__main__] 📝 POST data received: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange&requested_token_type=urn%3Aietf%3Aparams%3Aoauth%3Atoken-type%3Aaccess_token&subject_token_type=urn%3Aietf%3Aparams%3Aoauth%3Atoken...
+2025-08-07 02:29:03,441 - INFO - [__main__] 🔍 Token request - grant_type: urn:ietf:params:oauth:grant-type:token-exchange
+2025-08-07 02:29:03,441 - INFO - [__main__] 🔍 Token request - audience: https://127.0.0.1:8000
+2025-08-07 02:29:03,441 - INFO - [__main__] 🔍 Token request - requested_token_type: urn:ietf:params:oauth:token-type:access_token
+2025-08-07 02:29:03,442 - INFO - [__main__] ✅ STS Token Exchange response created (RFC 8693 compliant)
+2025-08-07 02:29:03,442 - INFO - [__main__] 📋 Exchange details - audience: https://127.0.0.1:8000, scope: https://127.0.0.1:8000
+2025-08-07 02:29:03,442 - INFO - [__main__] 📋 Options provided: {"userProject":"star-citizen-local"}
+2025-08-07 02:29:03,442 - INFO - [__main__] HTTP "POST /token HTTP/1.1" 200 -
+2025-08-07 02:29:03,442 - INFO - [__main__] ✅ Token response sent via HTTP
+2025-08-07 02:29:03,457 - INFO - [__main__] 🔄 POST request to /token from 127.0.0.1
+2025-08-07 02:29:03,457 - INFO - [__main__] 🔑 Processing OAuth2/STS token request via HTTP
+2025-08-07 02:29:03,457 - INFO - [__main__] 📝 POST data received: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange&audience=%2F%2Fiam.googleapis.com%2Fprojects%2F123456789%2Flocations%2Fglobal%2FworkforcePools%2Fstar-citizen-pool%2Fproviders%2Fst...
+2025-08-07 02:29:03,457 - INFO - [__main__] 🔍 Token request - grant_type: urn:ietf:params:oauth:grant-type:token-exchange
+2025-08-07 02:29:03,457 - INFO - [__main__] 🔍 Token request - audience: //iam.googleapis.com/projects/123456789/locations/global/workforcePools/star-citizen-pool/providers/star-citizen-provider
+2025-08-07 02:29:03,457 - INFO - [__main__] 🔍 Token request - requested_token_type: urn:ietf:params:oauth:token-type:access_token
+2025-08-07 02:29:03,457 - INFO - [__main__] ✅ STS Token Exchange response created (RFC 8693 compliant)
+2025-08-07 02:29:03,457 - INFO - [__main__] 📋 Exchange details - audience: //iam.googleapis.com/projects/123456789/locations/global/workforcePools/star-citizen-pool/providers/star-citizen-provider, scope: https://www.googleapis.com/auth/cloud-platform
+2025-08-07 02:29:03,457 - INFO - [__main__] HTTP "POST /token HTTP/1.1" 200 -
+2025-08-07 02:29:03,458 - INFO - [__main__] ✅ Token response sent via HTTP
+2025-08-07 02:30:40,284 - INFO - [__main__] 🚀 Starting Google APIs HTTP server on 127.0.0.1:50052
+2025-08-07 02:30:40,291 - INFO - [__main__] ✅ Google APIs HTTP server running on 127.0.0.1:50052
+2025-08-07 02:30:40,291 - INFO - [__main__] 🔧 Handling HTTP endpoints:
+2025-08-07 02:30:40,292 - INFO - [__main__]    * POST /token (OAuth2 token refresh)
+2025-08-07 02:30:40,292 - INFO - [__main__]    * GET /token (OAuth2 token info)
+2025-08-07 02:30:40,292 - INFO - [__main__]    * Generic Google API HTTP endpoints
+2025-08-07 02:42:19,305 - INFO - [__main__] 📄 GET request to / from 127.0.0.1
+2025-08-07 02:42:19,305 - INFO - [__main__] 🌐 Generic GET request to /
+2025-08-07 02:42:19,306 - INFO - [__main__] HTTP "GET / HTTP/1.1" 200 -
+2025-08-07 02:42:19,306 - INFO - [__main__] ✅ Generic GET response sent
+2025-08-07 02:42:19,320 - INFO - [__main__] 🔄 POST request to /token from 127.0.0.1
+2025-08-07 02:42:19,320 - INFO - [__main__] 🔑 Processing OAuth2/STS token request via HTTP
+2025-08-07 02:42:19,321 - INFO - [__main__] 📝 POST data received: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange&requested_token_type=urn%3Aietf%3Aparams%3Aoauth%3Atoken-type%3Aaccess_token&subject_token_type=urn%3Aietf%3Aparams%3Aoauth%3Atoken...
+2025-08-07 02:42:19,321 - INFO - [__main__] 🔍 Token request - grant_type: urn:ietf:params:oauth:grant-type:token-exchange
+2025-08-07 02:42:19,322 - INFO - [__main__] 🔍 Token request - audience: https://127.0.0.1:8000
+2025-08-07 02:42:19,322 - INFO - [__main__] 🔍 Token request - requested_token_type: urn:ietf:params:oauth:token-type:access_token
+2025-08-07 02:42:19,322 - INFO - [__main__] ✅ STS Token Exchange response created (RFC 8693 compliant)
+2025-08-07 02:42:19,322 - INFO - [__main__] 📋 Exchange details - audience: https://127.0.0.1:8000, scope: services.arenacommander services.ledger sc.external.services
+2025-08-07 02:42:19,322 - INFO - [__main__] 📋 Options provided: {"userProject":"star-citizen-local", "services": ["arenacommander", "ledger", "presence", "push"]}
+2025-08-07 02:42:19,322 - INFO - [__main__] HTTP "POST /token HTTP/1.1" 200 -
+2025-08-07 02:42:19,322 - INFO - [__main__] ✅ Token response sent via HTTP
+2025-08-07 21:19:57,581 - INFO - [__main__] 🚀 Starting Google APIs HTTP server on 127.0.0.1:50052
+2025-08-07 21:19:57,593 - INFO - [__main__] ✅ Google APIs HTTP server running on 127.0.0.1:50052
+2025-08-07 21:19:57,594 - INFO - [__main__] 🔧 Handling HTTP endpoints:
+2025-08-07 21:19:57,594 - INFO - [__main__]    * POST /token (OAuth2 token refresh)
+2025-08-07 21:19:57,594 - INFO - [__main__]    * GET /token (OAuth2 token info)
+2025-08-07 21:19:57,594 - INFO - [__main__]    * Generic Google API HTTP endpoints
+2025-08-07 22:03:19,669 - INFO - [__main__] 🚀 Starting Google APIs HTTP server on 127.0.0.1:50052
+2025-08-07 22:03:19,674 - INFO - [__main__] ✅ Google APIs HTTP server running on 127.0.0.1:50052
+2025-08-07 22:03:19,674 - INFO - [__main__] 🔧 Handling HTTP endpoints:
+2025-08-07 22:03:19,674 - INFO - [__main__]    * POST /token (OAuth2 token refresh)
+2025-08-07 22:03:19,674 - INFO - [__main__]    * GET /token (OAuth2 token info)
+2025-08-07 22:03:19,674 - INFO - [__main__]    * Generic Google API HTTP endpoints
+2025-08-07 22:41:52,946 - INFO - [__main__] 🚀 Starting Google APIs HTTP server on 127.0.0.1:50052
+2025-08-07 22:41:52,951 - INFO - [__main__] ✅ Google APIs HTTP server running on 127.0.0.1:50052
+2025-08-07 22:41:52,952 - INFO - [__main__] 🔧 Handling HTTP endpoints:
+2025-08-07 22:41:52,952 - INFO - [__main__]    * POST /token (OAuth2 token refresh)
+2025-08-07 22:41:52,952 - INFO - [__main__]    * GET /token (OAuth2 token info)
+2025-08-07 22:41:52,952 - INFO - [__main__]    * Generic Google API HTTP endpoints
+2025-08-07 22:42:31,812 - INFO - [__main__] 🚀 Starting Google APIs HTTP server on 127.0.0.1:50052
+2025-08-07 22:42:31,817 - INFO - [__main__] ✅ Google APIs HTTP server running on 127.0.0.1:50052
+2025-08-07 22:42:31,817 - INFO - [__main__] 🔧 Handling HTTP endpoints:
+2025-08-07 22:42:31,817 - INFO - [__main__]    * POST /token (OAuth2 token refresh)
+2025-08-07 22:42:31,817 - INFO - [__main__]    * GET /token (OAuth2 token info)
+2025-08-07 22:42:31,817 - INFO - [__main__]    * Generic Google API HTTP endpoints
+2025-08-07 22:53:00,675 - INFO - [__main__] 🚀 Starting Google APIs HTTP server on 127.0.0.1:50052
+2025-08-07 22:53:00,681 - INFO - [__main__] ✅ Google APIs HTTP server running on 127.0.0.1:50052
+2025-08-07 22:53:00,681 - INFO - [__main__] 🔧 Handling HTTP endpoints:
+2025-08-07 22:53:00,682 - INFO - [__main__]    * POST /token (OAuth2 token refresh)
+2025-08-07 22:53:00,682 - INFO - [__main__]    * GET /token (OAuth2 token info)
+2025-08-07 22:53:00,682 - INFO - [__main__]    * Generic Google API HTTP endpoints
+2025-08-07 23:04:27,473 - INFO - [__main__] 🚀 Starting Google APIs HTTP server on 127.0.0.1:50052
+2025-08-07 23:04:27,478 - INFO - [__main__] ✅ Google APIs HTTP server running on 127.0.0.1:50052
+2025-08-07 23:04:27,478 - INFO - [__main__] 🔧 Handling HTTP endpoints:
+2025-08-07 23:04:27,478 - INFO - [__main__]    * POST /token (OAuth2 token refresh)
+2025-08-07 23:04:27,478 - INFO - [__main__]    * GET /token (OAuth2 token info)
+2025-08-07 23:04:27,478 - INFO - [__main__]    * Generic Google API HTTP endpoints

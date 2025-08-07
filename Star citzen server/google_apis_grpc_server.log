@@ -1,0 +1,368 @@
+2025-08-07 01:50:37,681 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 01:50:37,713 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 01:50:37,715 - ERROR - [__main__] ❌ Server error: 'function' object has no attribute 'items'
+2025-08-07 01:51:58,709 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 01:51:58,713 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 01:51:58,714 - ERROR - [__main__] ❌ Server error: 'function' object has no attribute 'items'
+2025-08-07 01:53:03,893 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 01:53:03,896 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 01:53:03,907 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 01:53:03,907 - INFO - [__main__] 🔧 Server ready to handle Google API service calls
+2025-08-07 01:53:47,606 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 01:53:47,609 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 01:53:47,610 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 01:53:47,610 - INFO - [__main__] 🔧 Server ready to handle Google API service calls
+2025-08-07 01:56:02,711 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 01:56:02,714 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 01:56:02,716 - ERROR - [__main__] ❌ Server error: cannot import name '_GenericRpcHandler' from 'grpc._server' (C:\Python313\Lib\site-packages\grpc\_server.py)
+2025-08-07 01:56:29,274 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 01:56:29,277 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 01:56:29,278 - WARNING - [__main__] ⚠️ Could not add generic handler: 'function' object has no attribute 'items'
+2025-08-07 01:56:29,278 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 01:56:29,278 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 01:56:29,278 - INFO - [__main__]    * oauth2.googleapis.com
+2025-08-07 01:56:29,279 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 01:56:29,279 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com
+2025-08-07 01:56:29,279 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 01:56:29,279 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 01:56:29,279 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 01:56:29,279 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 01:56:29,279 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 01:56:46,319 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 01:56:46,322 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 01:56:46,323 - WARNING - [__main__] ⚠️ Could not add generic handler: 'function' object has no attribute 'items'
+2025-08-07 01:56:46,324 - ERROR - [__main__] ❌ Server error: Failed to bind to address 127.0.0.1:50051; set GRPC_VERBOSITY=debug environment variable to see detailed error message.
+2025-08-07 02:07:57,774 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:07:57,777 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 02:07:57,778 - WARNING - [__main__] ⚠️ Could not add generic handler: 'function' object has no attribute 'items'
+2025-08-07 02:07:57,779 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 02:07:57,779 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:07:57,779 - INFO - [__main__]    * oauth2.googleapis.com
+2025-08-07 02:07:57,779 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:07:57,779 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com
+2025-08-07 02:07:57,779 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:07:57,779 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:07:57,779 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:07:57,779 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:07:57,779 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:08:43,947 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:08:43,951 - WARNING - [__main__] ⚠️ gRPC reflection not available
+2025-08-07 02:08:43,951 - INFO - [__main__] ✅ Generic handler capability noted (handling through servicer methods)
+2025-08-07 02:08:43,951 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 02:08:43,951 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:08:43,951 - INFO - [__main__]    * oauth2.googleapis.com
+2025-08-07 02:08:43,952 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:08:43,952 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com
+2025-08-07 02:08:43,952 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:08:43,952 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:08:43,952 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:08:43,952 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:08:43,952 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:10:55,094 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:10:55,098 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:10:55,101 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 02:10:55,101 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:10:55,101 - INFO - [__main__]    * oauth2.googleapis.com
+2025-08-07 02:10:55,101 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:10:55,101 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com
+2025-08-07 02:10:55,101 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:10:55,101 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:10:55,101 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:10:55,101 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:10:55,102 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:11:02,659 - INFO - [__main__] 📞 Routing call: /google.oauth2.v2.OAuth2/GetTokenInfo
+2025-08-07 02:11:02,660 - INFO - [__main__] 🔌 gRPC call: /google.oauth2.v2.OAuth2/GetTokenInfo from ipv4:127.0.0.1:62482 (#1)
+2025-08-07 02:11:02,660 - INFO - [__main__] 🌐 Creating generic response for: /google.oauth2.v2.OAuth2/GetTokenInfo
+2025-08-07 02:11:02,660 - INFO - [__main__] ✅ Generic response created
+2025-08-07 02:11:02,662 - INFO - [__main__] 📞 Routing call: /google.iam.v1.IAMPolicy/GetIamPolicy
+2025-08-07 02:11:02,662 - INFO - [__main__] 🔌 gRPC call: /google.iam.v1.IAMPolicy/GetIamPolicy from ipv4:127.0.0.1:62482 (#2)
+2025-08-07 02:11:02,662 - INFO - [__main__] 🌐 Creating generic response for: /google.iam.v1.IAMPolicy/GetIamPolicy
+2025-08-07 02:11:02,662 - INFO - [__main__] ✅ Generic response created
+2025-08-07 02:11:02,663 - INFO - [__main__] 📞 Routing call: /envoy.service.discovery.v3.AggregatedDiscoveryService/StreamAggregatedResources
+2025-08-07 02:11:02,663 - INFO - [__main__] 🔌 gRPC call: /envoy.service.discovery.v3.AggregatedDiscoveryService/StreamAggregatedResources from ipv4:127.0.0.1:62482 (#3)
+2025-08-07 02:11:02,663 - INFO - [__main__] 🌐 Creating generic response for: /envoy.service.discovery.v3.AggregatedDiscoveryService/StreamAggregatedResources
+2025-08-07 02:11:02,663 - INFO - [__main__] ✅ Generic response created
+2025-08-07 02:11:32,107 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:11:32,112 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:11:32,115 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 02:11:32,116 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:11:32,116 - INFO - [__main__]    * oauth2.googleapis.com
+2025-08-07 02:11:32,116 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:11:32,117 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com
+2025-08-07 02:11:32,117 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:11:32,117 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:11:32,117 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:11:32,117 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:11:32,117 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:11:40,520 - INFO - [__main__] 📞 Routing call: /google.oauth2.v2.OAuth2/GetTokenInfo
+2025-08-07 02:11:40,522 - INFO - [__main__] 🔌 gRPC call: /google.oauth2.v2.OAuth2/GetTokenInfo from ipv4:127.0.0.1:62498 (#1)
+2025-08-07 02:11:40,522 - INFO - [__main__] 🔑 Processing OAuth2 request
+2025-08-07 02:11:40,522 - INFO - [__main__] ✅ OAuth2 token response created
+2025-08-07 02:11:40,522 - INFO - [__main__] 📞 Routing call: /google.iam.v1.IAMPolicy/GetIamPolicy
+2025-08-07 02:11:40,523 - INFO - [__main__] 🔌 gRPC call: /google.iam.v1.IAMPolicy/GetIamPolicy from ipv4:127.0.0.1:62498 (#2)
+2025-08-07 02:11:40,523 - INFO - [__main__] 🛡️ Processing IAM request
+2025-08-07 02:11:40,523 - INFO - [__main__] ✅ IAM policy response created
+2025-08-07 02:11:40,523 - INFO - [__main__] 📞 Routing call: /envoy.service.discovery.v3.AggregatedDiscoveryService/StreamAggregatedResources
+2025-08-07 02:11:40,524 - INFO - [__main__] 🔌 gRPC call: /envoy.service.discovery.v3.AggregatedDiscoveryService/StreamAggregatedResources from ipv4:127.0.0.1:62498 (#3)
+2025-08-07 02:11:40,524 - INFO - [__main__] 🚦 Processing Traffic Director request
+2025-08-07 02:11:40,524 - INFO - [__main__] ✅ Traffic Director response created
+2025-08-07 02:12:15,618 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:12:15,623 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:12:15,634 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 02:12:15,634 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:12:15,634 - INFO - [__main__]    * oauth2.googleapis.com
+2025-08-07 02:12:15,634 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:12:15,634 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com
+2025-08-07 02:12:15,634 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:12:15,634 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:12:15,634 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:12:15,635 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:12:15,635 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:13:50,025 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:13:50,029 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:14:53,046 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:14:53,050 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:14:53,064 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 02:14:53,064 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:14:53,065 - INFO - [__main__]    * oauth2.googleapis.com
+2025-08-07 02:14:53,065 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:14:53,065 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com
+2025-08-07 02:14:53,065 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:14:53,065 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:14:53,065 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:14:53,065 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:14:53,065 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:15:02,526 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:15:02,530 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:30:40,093 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:30:40,098 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:30:40,106 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 02:30:40,106 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:30:40,107 - INFO - [__main__]    * oauth2.googleapis.com (OAuth2 + token refresh)
+2025-08-07 02:30:40,107 - INFO - [__main__]    * sts.googleapis.com (Security Token Service)
+2025-08-07 02:30:40,107 - INFO - [__main__]    * iamcredentials.googleapis.com
+2025-08-07 02:30:40,107 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:30:40,107 - INFO - [__main__]    * iam.googleapis.com/locations/*/workforcePools/* (Workforce Identity)
+2025-08-07 02:30:40,107 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com (C2P Client-to-Proxy)
+2025-08-07 02:30:40,107 - INFO - [__main__]    * xdstp: (xDS Transport Protocol)
+2025-08-07 02:30:40,107 - INFO - [__main__]    * envoy.config.cluster.v3.Cluster/google_cfe_*
+2025-08-07 02:30:40,107 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:30:40,107 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:30:40,107 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:30:40,107 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:30:40,107 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:38:08,065 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:38:08,072 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:39:17,568 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 127.0.0.1:50051
+2025-08-07 02:39:17,571 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:39:17,583 - INFO - [__main__] ✅ Google APIs gRPC server running on 127.0.0.1:50051
+2025-08-07 02:39:17,583 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:39:17,584 - INFO - [__main__]    * oauth2.googleapis.com (OAuth2 + token refresh)
+2025-08-07 02:39:17,584 - INFO - [__main__]    * sts.googleapis.com (Security Token Service)
+2025-08-07 02:39:17,584 - INFO - [__main__]    * iamcredentials.googleapis.com
+2025-08-07 02:39:17,584 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:39:17,584 - INFO - [__main__]    * iam.googleapis.com/locations/*/workforcePools/* (Workforce Identity)
+2025-08-07 02:39:17,584 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com (C2P Client-to-Proxy)
+2025-08-07 02:39:17,584 - INFO - [__main__]    * xdstp: (xDS Transport Protocol)
+2025-08-07 02:39:17,584 - INFO - [__main__]    * envoy.config.cluster.v3.Cluster/google_cfe_*
+2025-08-07 02:39:17,584 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:39:17,584 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:39:17,584 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:39:17,584 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:39:17,584 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:39:17,584 - INFO - [__main__] 🎮 Handling Star Citizen service calls:
+2025-08-07 02:39:17,585 - INFO - [__main__]    * services.arenacommander.get_entitlements
+2025-08-07 02:39:17,585 - INFO - [__main__]    * services.ledger.get_funds_external
+2025-08-07 02:39:17,585 - INFO - [__main__]    * sc.external.services.presence.v1.PresenceService
+2025-08-07 02:39:17,585 - INFO - [__main__]    * sc.external.services.entitlement.v1.*
+2025-08-07 02:39:17,585 - INFO - [__main__]    * sc.external.services.trace.v1.TraceService
+2025-08-07 02:39:17,585 - INFO - [__main__]    * sc.external.services.push.v1.PushService
+2025-08-07 02:39:17,585 - INFO - [__main__]    * entity_graph/commands/MutateEntities
+2025-08-07 02:39:17,585 - INFO - [__main__]    * grpc_echo_rpc (test RPC)
+2025-08-07 02:45:05,563 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 0.0.0.0:50051
+2025-08-07 02:45:05,567 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 02:45:05,567 - INFO - [__main__] ✅ Added insecure port: 0.0.0.0:50051
+2025-08-07 02:45:05,589 - INFO - [__main__] ✅ Added secure port: 0.0.0.0:50052
+2025-08-07 02:45:05,603 - INFO - [__main__] ✅ Google APIs gRPC server running
+2025-08-07 02:45:05,603 - INFO - [__main__] 🔧 Listening on:
+2025-08-07 02:45:05,603 - INFO - [__main__]    * 0.0.0.0:50051 (insecure gRPC)
+2025-08-07 02:45:05,603 - INFO - [__main__]    * 0.0.0.0:50052 (secure gRPC, if certificates available)
+2025-08-07 02:45:05,604 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 02:45:05,604 - INFO - [__main__]    * oauth2.googleapis.com (OAuth2 + token refresh)
+2025-08-07 02:45:05,604 - INFO - [__main__]    * sts.googleapis.com (Security Token Service)
+2025-08-07 02:45:05,604 - INFO - [__main__]    * iamcredentials.googleapis.com
+2025-08-07 02:45:05,604 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 02:45:05,604 - INFO - [__main__]    * iam.googleapis.com/locations/*/workforcePools/* (Workforce Identity)
+2025-08-07 02:45:05,604 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com (C2P Client-to-Proxy)
+2025-08-07 02:45:05,604 - INFO - [__main__]    * xdstp: (xDS Transport Protocol)
+2025-08-07 02:45:05,604 - INFO - [__main__]    * envoy.config.cluster.v3.Cluster/google_cfe_*
+2025-08-07 02:45:05,604 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 02:45:05,605 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 02:45:05,605 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 02:45:05,605 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 02:45:05,605 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 02:45:05,605 - INFO - [__main__] 🎮 Handling Star Citizen service calls:
+2025-08-07 02:45:05,605 - INFO - [__main__]    * services.arenacommander.get_entitlements
+2025-08-07 02:45:05,605 - INFO - [__main__]    * services.ledger.get_funds_external
+2025-08-07 02:45:05,605 - INFO - [__main__]    * sc.external.services.presence.v1.PresenceService
+2025-08-07 02:45:05,605 - INFO - [__main__]    * sc.external.services.entitlement.v1.*
+2025-08-07 02:45:05,605 - INFO - [__main__]    * sc.external.services.trace.v1.TraceService
+2025-08-07 02:45:05,605 - INFO - [__main__]    * sc.external.services.push.v1.PushService
+2025-08-07 02:45:05,606 - INFO - [__main__]    * entity_graph/commands/MutateEntities
+2025-08-07 02:45:05,606 - INFO - [__main__]    * grpc_echo_rpc (test RPC)
+2025-08-07 21:17:28,976 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 0.0.0.0:443
+2025-08-07 21:17:29,009 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 21:17:29,011 - INFO - [__main__] ✅ Added insecure port: 0.0.0.0:443
+2025-08-07 21:17:29,031 - INFO - [__main__] ✅ Added secure port: 0.0.0.0:50052
+2025-08-07 21:17:29,035 - INFO - [__main__] ✅ Google APIs gRPC server running
+2025-08-07 21:17:29,035 - INFO - [__main__] 🔧 Listening on:
+2025-08-07 21:17:29,035 - INFO - [__main__]    * 0.0.0.0:443 (insecure gRPC)
+2025-08-07 21:17:29,035 - INFO - [__main__]    * 0.0.0.0:50052 (secure gRPC, if certificates available)
+2025-08-07 21:17:29,035 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 21:17:29,035 - INFO - [__main__]    * oauth2.googleapis.com (OAuth2 + token refresh)
+2025-08-07 21:17:29,035 - INFO - [__main__]    * sts.googleapis.com (Security Token Service)
+2025-08-07 21:17:29,035 - INFO - [__main__]    * iamcredentials.googleapis.com
+2025-08-07 21:17:29,035 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 21:17:29,035 - INFO - [__main__]    * iam.googleapis.com/locations/*/workforcePools/* (Workforce Identity)
+2025-08-07 21:17:29,035 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com (C2P Client-to-Proxy)
+2025-08-07 21:17:29,035 - INFO - [__main__]    * xdstp: (xDS Transport Protocol)
+2025-08-07 21:17:29,036 - INFO - [__main__]    * envoy.config.cluster.v3.Cluster/google_cfe_*
+2025-08-07 21:17:29,036 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 21:17:29,036 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 21:17:29,036 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 21:17:29,036 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 21:17:29,036 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 21:17:29,036 - INFO - [__main__] 🎮 Handling Star Citizen service calls:
+2025-08-07 21:17:29,036 - INFO - [__main__]    * services.arenacommander.get_entitlements
+2025-08-07 21:17:29,036 - INFO - [__main__]    * services.ledger.get_funds_external
+2025-08-07 21:17:29,036 - INFO - [__main__]    * sc.external.services.presence.v1.PresenceService
+2025-08-07 21:17:29,036 - INFO - [__main__]    * sc.external.services.entitlement.v1.*
+2025-08-07 21:17:29,037 - INFO - [__main__]    * sc.external.services.trace.v1.TraceService
+2025-08-07 21:17:29,037 - INFO - [__main__]    * sc.external.services.push.v1.PushService
+2025-08-07 21:17:29,037 - INFO - [__main__]    * entity_graph/commands/MutateEntities
+2025-08-07 21:17:29,037 - INFO - [__main__]    * grpc_echo_rpc (test RPC)
+2025-08-07 21:19:14,069 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 0.0.0.0:443
+2025-08-07 21:19:14,072 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 21:19:14,073 - INFO - [__main__] ✅ Added insecure port: 0.0.0.0:443
+2025-08-07 21:19:14,076 - WARNING - [__main__] ⚠️ Could not add secure port: Failed to bind to address 0.0.0.0:443; set GRPC_VERBOSITY=debug environment variable to see detailed error message.
+2025-08-07 21:19:14,088 - INFO - [__main__] ✅ Google APIs gRPC server running
+2025-08-07 21:19:14,088 - INFO - [__main__] 🔧 Listening on:
+2025-08-07 21:19:14,088 - INFO - [__main__]    * 0.0.0.0:443 (insecure gRPC)
+2025-08-07 21:19:14,088 - INFO - [__main__]    * 0.0.0.0:443 (secure gRPC, if certificates available)
+2025-08-07 21:19:14,088 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 21:19:14,088 - INFO - [__main__]    * oauth2.googleapis.com (OAuth2 + token refresh)
+2025-08-07 21:19:14,088 - INFO - [__main__]    * sts.googleapis.com (Security Token Service)
+2025-08-07 21:19:14,088 - INFO - [__main__]    * iamcredentials.googleapis.com
+2025-08-07 21:19:14,088 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 21:19:14,089 - INFO - [__main__]    * iam.googleapis.com/locations/*/workforcePools/* (Workforce Identity)
+2025-08-07 21:19:14,089 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com (C2P Client-to-Proxy)
+2025-08-07 21:19:14,089 - INFO - [__main__]    * xdstp: (xDS Transport Protocol)
+2025-08-07 21:19:14,089 - INFO - [__main__]    * envoy.config.cluster.v3.Cluster/google_cfe_*
+2025-08-07 21:19:14,089 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 21:19:14,089 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 21:19:14,089 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 21:19:14,089 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 21:19:14,089 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 21:19:14,089 - INFO - [__main__] 🎮 Handling Star Citizen service calls:
+2025-08-07 21:19:14,089 - INFO - [__main__]    * services.arenacommander.get_entitlements
+2025-08-07 21:19:14,090 - INFO - [__main__]    * services.ledger.get_funds_external
+2025-08-07 21:19:14,090 - INFO - [__main__]    * sc.external.services.presence.v1.PresenceService
+2025-08-07 21:19:14,090 - INFO - [__main__]    * sc.external.services.entitlement.v1.*
+2025-08-07 21:19:14,090 - INFO - [__main__]    * sc.external.services.trace.v1.TraceService
+2025-08-07 21:19:14,090 - INFO - [__main__]    * sc.external.services.push.v1.PushService
+2025-08-07 21:19:14,090 - INFO - [__main__]    * entity_graph/commands/MutateEntities
+2025-08-07 21:19:14,090 - INFO - [__main__]    * grpc_echo_rpc (test RPC)
+2025-08-07 21:19:57,375 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 0.0.0.0:443
+2025-08-07 21:19:57,381 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 21:19:57,382 - ERROR - [__main__] ❌ Failed to add insecure port 0.0.0.0:443: Failed to bind to address 0.0.0.0:443; set GRPC_VERBOSITY=debug environment variable to see detailed error message.
+2025-08-07 21:19:57,382 - INFO - [__main__] ✅ Added insecure port: 127.0.0.1:443
+2025-08-07 21:19:57,383 - WARNING - [__main__] ⚠️ Could not add secure port: Failed to bind to address 0.0.0.0:443; set GRPC_VERBOSITY=debug environment variable to see detailed error message.
+2025-08-07 21:19:57,385 - INFO - [__main__] ✅ Google APIs gRPC server running
+2025-08-07 21:19:57,385 - INFO - [__main__] 🔧 Listening on:
+2025-08-07 21:19:57,385 - INFO - [__main__]    * 0.0.0.0:443 (insecure gRPC)
+2025-08-07 21:19:57,385 - INFO - [__main__]    * 0.0.0.0:443 (secure gRPC, if certificates available)
+2025-08-07 21:19:57,385 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 21:19:57,385 - INFO - [__main__]    * oauth2.googleapis.com (OAuth2 + token refresh)
+2025-08-07 21:19:57,385 - INFO - [__main__]    * sts.googleapis.com (Security Token Service)
+2025-08-07 21:19:57,385 - INFO - [__main__]    * iamcredentials.googleapis.com
+2025-08-07 21:19:57,386 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 21:19:57,386 - INFO - [__main__]    * iam.googleapis.com/locations/*/workforcePools/* (Workforce Identity)
+2025-08-07 21:19:57,386 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com (C2P Client-to-Proxy)
+2025-08-07 21:19:57,386 - INFO - [__main__]    * xdstp: (xDS Transport Protocol)
+2025-08-07 21:19:57,386 - INFO - [__main__]    * envoy.config.cluster.v3.Cluster/google_cfe_*
+2025-08-07 21:19:57,386 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 21:19:57,386 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 21:19:57,386 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 21:19:57,386 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 21:19:57,386 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 21:19:57,387 - INFO - [__main__] 🎮 Handling Star Citizen service calls:
+2025-08-07 21:19:57,387 - INFO - [__main__]    * services.arenacommander.get_entitlements
+2025-08-07 21:19:57,387 - INFO - [__main__]    * services.ledger.get_funds_external
+2025-08-07 21:19:57,387 - INFO - [__main__]    * sc.external.services.presence.v1.PresenceService
+2025-08-07 21:19:57,387 - INFO - [__main__]    * sc.external.services.entitlement.v1.*
+2025-08-07 21:19:57,387 - INFO - [__main__]    * sc.external.services.trace.v1.TraceService
+2025-08-07 21:19:57,387 - INFO - [__main__]    * sc.external.services.push.v1.PushService
+2025-08-07 21:19:57,387 - INFO - [__main__]    * entity_graph/commands/MutateEntities
+2025-08-07 21:19:57,387 - INFO - [__main__]    * grpc_echo_rpc (test RPC)
+2025-08-07 22:52:56,148 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 0.0.0.0:443
+2025-08-07 22:52:56,153 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 22:52:56,153 - INFO - [__main__] ✅ Added insecure port: 0.0.0.0:443
+2025-08-07 22:52:56,154 - WARNING - [__main__] ⚠️ Could not add secure port: Failed to bind to address 0.0.0.0:443; set GRPC_VERBOSITY=debug environment variable to see detailed error message.
+2025-08-07 22:52:56,170 - INFO - [__main__] ✅ Google APIs gRPC server running
+2025-08-07 22:52:56,170 - INFO - [__main__] 🔧 Listening on:
+2025-08-07 22:52:56,170 - INFO - [__main__]    * 0.0.0.0:443 (insecure gRPC)
+2025-08-07 22:52:56,170 - INFO - [__main__]    * 0.0.0.0:443 (secure gRPC, if certificates available)
+2025-08-07 22:52:56,170 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 22:52:56,170 - INFO - [__main__]    * oauth2.googleapis.com (OAuth2 + token refresh)
+2025-08-07 22:52:56,170 - INFO - [__main__]    * sts.googleapis.com (Security Token Service)
+2025-08-07 22:52:56,170 - INFO - [__main__]    * iamcredentials.googleapis.com
+2025-08-07 22:52:56,170 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 22:52:56,170 - INFO - [__main__]    * iam.googleapis.com/locations/*/workforcePools/* (Workforce Identity)
+2025-08-07 22:52:56,170 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com (C2P Client-to-Proxy)
+2025-08-07 22:52:56,171 - INFO - [__main__]    * xdstp: (xDS Transport Protocol)
+2025-08-07 22:52:56,171 - INFO - [__main__]    * envoy.config.cluster.v3.Cluster/google_cfe_*
+2025-08-07 22:52:56,171 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 22:52:56,171 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 22:52:56,171 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 22:52:56,171 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 22:52:56,171 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 22:52:56,171 - INFO - [__main__] 🎮 Handling Star Citizen service calls:
+2025-08-07 22:52:56,171 - INFO - [__main__]    * services.arenacommander.get_entitlements
+2025-08-07 22:52:56,171 - INFO - [__main__]    * services.ledger.get_funds_external
+2025-08-07 22:52:56,171 - INFO - [__main__]    * sc.external.services.presence.v1.PresenceService
+2025-08-07 22:52:56,171 - INFO - [__main__]    * sc.external.services.entitlement.v1.*
+2025-08-07 22:52:56,171 - INFO - [__main__]    * sc.external.services.trace.v1.TraceService
+2025-08-07 22:52:56,171 - INFO - [__main__]    * sc.external.services.push.v1.PushService
+2025-08-07 22:52:56,171 - INFO - [__main__]    * entity_graph/commands/MutateEntities
+2025-08-07 22:52:56,171 - INFO - [__main__]    * grpc_echo_rpc (test RPC)
+2025-08-07 23:04:22,955 - INFO - [__main__] 🚀 Starting Google APIs gRPC server on 0.0.0.0:443
+2025-08-07 23:04:22,958 - INFO - [__main__] 📝 gRPC reflection skipped (optional feature)
+2025-08-07 23:04:22,959 - INFO - [__main__] ✅ Added insecure port: 0.0.0.0:443
+2025-08-07 23:04:22,959 - WARNING - [__main__] ⚠️ Could not add secure port: Failed to bind to address 0.0.0.0:443; set GRPC_VERBOSITY=debug environment variable to see detailed error message.
+2025-08-07 23:04:22,961 - INFO - [__main__] ✅ Google APIs gRPC server running
+2025-08-07 23:04:22,962 - INFO - [__main__] 🔧 Listening on:
+2025-08-07 23:04:22,962 - INFO - [__main__]    * 0.0.0.0:443 (insecure gRPC)
+2025-08-07 23:04:22,962 - INFO - [__main__]    * 0.0.0.0:443 (secure gRPC, if certificates available)
+2025-08-07 23:04:22,962 - INFO - [__main__] 🔧 Handling Google API service calls:
+2025-08-07 23:04:22,962 - INFO - [__main__]    * oauth2.googleapis.com (OAuth2 + token refresh)
+2025-08-07 23:04:22,962 - INFO - [__main__]    * sts.googleapis.com (Security Token Service)
+2025-08-07 23:04:22,962 - INFO - [__main__]    * iamcredentials.googleapis.com
+2025-08-07 23:04:22,962 - INFO - [__main__]    * iam.googleapis.com
+2025-08-07 23:04:22,962 - INFO - [__main__]    * iam.googleapis.com/locations/*/workforcePools/* (Workforce Identity)
+2025-08-07 23:04:22,962 - INFO - [__main__]    * traffic-director-c2p.xds.googleapis.com (C2P Client-to-Proxy)
+2025-08-07 23:04:22,962 - INFO - [__main__]    * xdstp: (xDS Transport Protocol)
+2025-08-07 23:04:22,962 - INFO - [__main__]    * envoy.config.cluster.v3.Cluster/google_cfe_*
+2025-08-07 23:04:22,962 - INFO - [__main__]    * directpath-pa.googleapis.com
+2025-08-07 23:04:22,962 - INFO - [__main__]    * type.googleapis.com/grpc.status.*
+2025-08-07 23:04:22,962 - INFO - [__main__]    * type.googleapis.com/envoy.*
+2025-08-07 23:04:22,962 - INFO - [__main__]    * type.googleapis.com/google.protobuf.*
+2025-08-07 23:04:22,962 - INFO - [__main__]    * Generic type.googleapis.com/* handlers
+2025-08-07 23:04:22,962 - INFO - [__main__] 🎮 Handling Star Citizen service calls:
+2025-08-07 23:04:22,962 - INFO - [__main__]    * services.arenacommander.get_entitlements
+2025-08-07 23:04:22,962 - INFO - [__main__]    * services.ledger.get_funds_external
+2025-08-07 23:04:22,962 - INFO - [__main__]    * sc.external.services.presence.v1.PresenceService
+2025-08-07 23:04:22,962 - INFO - [__main__]    * sc.external.services.entitlement.v1.*
+2025-08-07 23:04:22,963 - INFO - [__main__]    * sc.external.services.trace.v1.TraceService
+2025-08-07 23:04:22,963 - INFO - [__main__]    * sc.external.services.push.v1.PushService
+2025-08-07 23:04:22,963 - INFO - [__main__]    * entity_graph/commands/MutateEntities
+2025-08-07 23:04:22,963 - INFO - [__main__]    * grpc_echo_rpc (test RPC)

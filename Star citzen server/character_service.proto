@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package sc.external.services.character.v1;
+option go_package = "starcitizen/proto/character";
+
+// ------------------- CHARACTER SERVICE -------------------
+// Handles character-specific operations separate from login authentication
+service CharacterService {
+  rpc GetCharacterStatus(CharacterStatusRequest) returns (CharacterStatusResponse);
+  rpc GetCharacterData(CharacterDataRequest) returns (CharacterDataResponse);
+  rpc UpdateCharacterLocation(UpdateCharacterLocationRequest) returns (UpdateCharacterLocationResponse);
+}
+
+message CharacterStatusRequest {
+  string account_id = 1;
+  string session_token = 2;  // Authentication token from login
+}
+
+message CharacterStatusResponse {
+  repeated Character characters = 1;
+  int32 result_code = 2;     // 0 = success, 1 = error
+  string error_message = 3;  // Error message if result_code != 0
+}
+
+message Character {
+  string geid = 1;           // Global Entity ID
+  string account_id = 2;     // Account owning this character
+  string name = 3;           // Character name
+  int32 state = 4;           // Character state (1=CURRENT, 2=ARCHIVED, 3=DELETED)
+  string createdAt = 5;      // Creation timestamp
+  string updatedAt = 6;      // Last update timestamp
+  string location = 7;       // Current location
+  int32 credits = 8;         // Credits/money
+  CharacterStats stats = 9;  // Character statistics
+  repeated CharacterItem inventory = 10; // Character inventory
+}
+
+message CharacterStats {
+  int32 level = 1;
+  int32 reputation = 2;
+  int32 crime_stat = 3;
+  map<string, int32> skill_levels = 4;
+}
+
+message CharacterItem {
+  string item_id = 1;
+  string item_type = 2;
+  int32 quantity = 3;
+  string location = 4;       // Where the item is stored
+}
+
+message CharacterDataRequest {
+  string character_geid = 1;
+  string session_token = 2;
+}
+
+message CharacterDataResponse {
+  Character character = 1;
+  int32 result_code = 2;
+  string error_message = 3;
+}
+
+message UpdateCharacterLocationRequest {
+  string character_geid = 1;
+  string new_location = 2;
+  string session_token = 3;
+}
+
+message UpdateCharacterLocationResponse {
+  bool success = 1;
+  string error_message = 2;
+}

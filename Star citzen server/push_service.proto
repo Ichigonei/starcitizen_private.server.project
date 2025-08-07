@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package sc.external.services.push.v1;
+
+service PushService {
+  rpc Listen (PushRequest) returns (stream PushNotification);
+  rpc Subscribe (SubscribeRequest) returns (SubscribeResponse);
+}
+
+message PushRequest {
+  string session_id = 1;
+  string player_id = 2;
+  repeated string channels = 3;
+}
+
+message PushNotification {
+  string notification_id = 1;
+  string channel = 2;
+  string message = 3;
+  string type = 4;
+  int64 timestamp = 5;
+  map<string, string> data = 6;
+}
+
+message SubscribeRequest {
+  string session_id = 1;
+  string channel = 2;
+}
+
+message SubscribeResponse {
+  bool success = 1;
+  string message = 2;
+}
