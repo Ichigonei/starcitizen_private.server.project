@@ -273,18 +273,12 @@ backup_grpc_server/
 
 ### Client Configuration
 
-⚠️ **Important**: The Star Citizen client (`starcitizen.exe`) must be configured to redirect all network traffic to localhost (`127.0.0.1`) instead of the official servers.
+⚠️ **Important**: The Star Citizen client (`starcitizen.exe`) is configured to redirect all network traffic to localhost (`127.0.0.1`) instead of the official servers.
 
 **Method 1: Using start.bat (Simple)**
 1. Use the provided `start.bat` file to launch Star Citizen
 2. This batch file automatically applies the necessary redirects
 3. Simply run: `start.bat` from the server directory
-
-**Method 2: Using start_client.ps1 (Recommended)**
-1. Run PowerShell as Administrator
-2. Use the provided `start_client.ps1` PowerShell script
-3. Enhanced error checking and automatic server detection
-4. Run: `.\start_client.ps1` from the server directory
 
 **Method 2: Manual Configuration**
 - Modify hosts file or use network redirection tools
