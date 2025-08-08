@@ -302,17 +302,7 @@ The client should progress through:
 - **Entitlement processing** (LoginNotificationStream with reconcile sequence)
 - **Character data loading** (Character service responses)
 
-### Client Network Redirection
 
-The infrastructure expects the Star Citizen client to have **all network traffic redirected** to localhost:
-
-```
-Official RSI Servers          →    Local Infrastructure
-api.robertsspaceindustries.com →    127.0.0.1:443 (Google APIs)
-diffusion.robertsspaceindustries.com → 127.0.0.1:8000 (MITM Proxy)
-auth.robertsspaceindustries.com →   127.0.0.1:9000 (Login Server)
-game-servers.robertsspaceindustries.com → 127.0.0.1:5678 (gRPC Game Server)
-```
 
 ⚠️ **Security Note**: This redirection intercepts all Star Citizen network communication. Only use this setup in isolated testing environments.
 
