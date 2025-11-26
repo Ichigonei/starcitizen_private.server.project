@@ -1,0 +1,1 @@
+.\StarCitizen.exe  -envtag PUB --client-login-show-dialog 1 --services-config-enabled 1 --system-trace-service-enabled 1 --grpc-client-endpoint-override https://127.0.0.1:5678 
